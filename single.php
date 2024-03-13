@@ -16,6 +16,9 @@ if(have_posts()):
             <br>
             category : '.get_the_category_list(', ').'
         ';
+        
+            comments_template();
+        
     endwhile;
 else:
     echo '<p align="center">No posts found</p>';

@@ -19,6 +19,7 @@
 </title>
 </head>
 <body class="<?php body_class() ?>">
+    <?php wp_body_open(  ); ?>
     <header align="center">
        <span>
          <h1><a href="<?php echo home_url() ?>"><?php bloginfo('name') ?></a></h1>
@@ -36,3 +37,4 @@
     </header>
     <br>
     <br>
+    <main>
