@@ -20,10 +20,10 @@
 </head>
 <body class="<?php body_class() ?>">
     <?php wp_body_open(  ); ?>
-    <header align="center">
+    <header align="center" role="banner">
        <span>
          <h1><a href="<?php echo home_url() ?>"><?php bloginfo('name') ?></a></h1>
-            <span>
+            <nav role="navigation">
                 <?php if(is_user_logged_in()): ?>
                     <a href="<?php echo wp_logout_url() ?>">Logout</a>
                     <a href="<?php echo get_author_posts_url(get_current_user_id()) ?>">Profile</a>
@@ -33,8 +33,8 @@
                     <a href="<?php echo wp_registration_url() ?>">Register</a>
                 <?php endif; ?>
        <span><?php get_search_form(); ?></span>
-       </span>
+                </nav>
     </header>
     <br>
     <br>
-    <main>
+    <main role="main">
