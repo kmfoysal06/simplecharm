@@ -1,27 +1,28 @@
 <?php
 get_header();
 
-if(have_posts()):
-    while(have_posts()): the_post();
-        echo '
-            <div class="post" align="center">
-                <h1 class="post-title">'.get_the_title().'</h1>
-                '.get_the_post_thumbnail(null,'medium').'
-                <div class="post-meta">
-                    <span class="post-date">'.get_the_date().'</span>
-                    <span class="post-author"><a href="'.get_author_posts_url(get_the_author_meta('ID')).'">'.get_the_author().'</a></span>
-                </div>
-                <div class="post-content">'.apply_filters('the_content', get_the_content()).'</div>
+if (have_posts()) :
+    while (have_posts()) : the_post();
+        ?>
+        <div class="post" align="center">
+            <h1 class="post-title"><?php echo esc_html(get_the_title()); ?></h1>
+            <?php the_post_thumbnail('medium'); ?>
+            <div class="post-meta">
+                <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
+                <span class="post-author"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
             </div>
+            <div class="post-content"><?php echo apply_filters('the_content', wp_kses_post(get_the_content())); ?></div>
             <br>
-            category : '.get_the_category_list(', ').'
-        ';
-        
-            comments_template();
-        
+            category : <?php echo wp_kses_post(get_the_category_list(', ')); ?>
+        </div>
+        <br>
+        <?php
+        comments_template();
     endwhile;
 else:
-    echo '<p align="center">No posts found</p>';
+    ?>
+    <p align="center">No posts found</p>
+    <?php
 endif;
 get_footer();
 ?>

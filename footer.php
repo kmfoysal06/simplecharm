@@ -1,6 +1,7 @@
 </main>
 <footer role="contentinfo">
-    <p>&copy; <?php echo date('Y') ?> - <?php bloginfo('name') ?></p>
-<?php wp_footer() ?>
+    <p>&copy; <?php echo esc_html(date('Y')); ?> - <?php echo esc_html(get_bloginfo('name')); ?></p>
+    <?php wp_footer(); ?>
+</footer>
 </body>
 </html>

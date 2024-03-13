@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head() ?>
+    <?php wp_head(); ?>
     <title>
     <?php 
         if (is_home()) {
-            echo get_bloginfo('name');
+            echo esc_html(get_bloginfo('name'));
         } elseif (is_single()) {
-            echo get_the_title();
+            echo esc_html(get_the_title());
         } elseif (is_category()) {
-            echo single_cat_title('', false);
+            echo esc_html(single_cat_title('', false));
         } else {
-            echo get_the_author();
+            echo esc_html(get_the_author());
         }
     ?>
-</title>
+    </title>
 </head>
-<body class="<?php body_class() ?>">
-    <?php wp_body_open(  ); ?>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <header align="center" role="banner">
        <span>
-         <h1><a href="<?php echo home_url() ?>"><?php bloginfo('name') ?></a></h1>
+         <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
             <nav role="navigation">
                 <?php if(is_user_logged_in()): ?>
-                    <a href="<?php echo wp_logout_url() ?>">Logout</a>
-                    <a href="<?php echo get_author_posts_url(get_current_user_id()) ?>">Profile</a>
-                    <a href="<?php echo admin_url('post-new.php') ?>">Create Post</a>
+                    <a href="<?php echo esc_url(wp_logout_url()); ?>">Logout</a>
+                    <a href="<?php echo esc_url(get_author_posts_url(get_current_user_id())); ?>">Profile</a>
+                    <a href="<?php echo esc_url(admin_url('post-new.php')); ?>">Create Post</a>
                 <?php else: ?>
-                    <a href="<?php echo wp_login_url() ?>">Login</a>
-                    <a href="<?php echo wp_registration_url() ?>">Register</a>
+                    <a href="<?php echo esc_url(wp_login_url()); ?>">Login</a>
+                    <a href="<?php echo esc_url(wp_registration_url()); ?>">Register</a>
                 <?php endif; ?>
-       <span><?php get_search_form(); ?></span>
-                </nav>
+                <span><?php get_search_form(); ?></span>
+            </nav>
     </header>
     <br>
     <br>
