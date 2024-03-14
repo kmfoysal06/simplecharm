@@ -3,8 +3,13 @@ get_header();
 
 if (have_posts()) :
     while (have_posts()) : the_post();
-        ?>
-        <div class="post" class="kmfnb-text-center">
+        ?><?php
+        if(post_password_required()){
+            echo get_the_password_form();
+            return;
+        }else{
+            ?>
+            <div class="post" class="kmfnb-text-center" align="center">
             <h1 class="post-title"><?php echo esc_html(get_the_title()); ?></h1>
             <?php the_post_thumbnail('medium'); ?>
             <div class="post-meta">
@@ -15,6 +20,7 @@ if (have_posts()) :
             <br>
             category : <?php echo wp_kses_post(get_the_category_list(', ')); ?>
         </div>
+       <?php } ?>
         <br>
         <?php
         comments_template();

@@ -5,14 +5,14 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'posts_per_page' => 10,
+    'posts_per_page' => 5,
     'paged' => $paged,
 );
 $query = new WP_Query($args);
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         ?>
-        <div class="kmfnb-text-center">
+        <div class="kmfnb-text-center kmfnb-content">
             <a href="<?php echo esc_url(get_the_permalink()); ?>">
                 <p><?php echo esc_html(get_the_title()); ?></p>
                 <p><?php echo esc_html(get_the_excerpt()); ?></p>

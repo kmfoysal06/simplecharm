@@ -7,7 +7,13 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple, clean blog theme for WordPress.
+"Nostyle Blog" is a clean and minimalist WordPress theme designed for those who appreciate simplicity and elegance in their online presence. With its uncluttered layout and understated design, Nostyle Blog lets your content take center stage without distraction.
 
 == Description ==
-Nostyle Blog is a simple and clean blog theme. It is designed for bloggers who want to focus on writing content and having a simple, clean site. Nostyle Blog is a fully responsive theme that is compatible with all devices.
+"Nostyle Blog" is a clean and minimalist WordPress theme designed for those who appreciate simplicity and elegance in their online presence. With its uncluttered layout and understated design, Nostyle Blog lets your content take center stage without distraction.
+
+This theme features carefully crafted CSS elements that ensure all components are aligned perfectly, providing a visually pleasing experience for your readers. Whether you're sharing your thoughts through blog posts, showcasing your portfolio, or promoting your business, Nostyle Blog offers a versatile platform to express your ideas effectively.
+
+Customization options are streamlined to maintain the theme's minimalist aesthetic while still allowing for personalization. You can easily tailor the background and foreground colors to reflect your brand or personal style, creating a cohesive and polished look across your site.
+
+Nostyle Blog is ideal for bloggers, writers, creatives, and businesses seeking a sleek and uncomplicated WordPress theme that emphasizes content above all else. With its intuitive design and focus on clarity, Nostyle Blog empowers you to share your message with clarity and elegance.
