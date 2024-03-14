@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
 get_header();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 // Load posts on the home page
