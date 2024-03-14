@@ -4,7 +4,7 @@ get_header();
 if (have_posts()) :
     while (have_posts()) : the_post();
         ?>
-        <div class="post" align="center">
+        <div class="post" class="kmfnb-text-center">
             <h1 class="post-title"><?php echo esc_html(get_the_title()); ?></h1>
             <?php the_post_thumbnail('medium'); ?>
             <div class="post-meta">
@@ -21,7 +21,7 @@ if (have_posts()) :
     endwhile;
 else:
     ?>
-    <p align="center">No posts found</p>
+    <p class="kmfnb-text-center">No posts found</p>
     <?php
 endif;
 get_footer();

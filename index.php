@@ -12,7 +12,7 @@ $query = new WP_Query($args);
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         ?>
-        <div align="center">
+        <div class="kmfnb-text-center">
             <a href="<?php echo esc_url(get_the_permalink()); ?>">
                 <p><?php echo esc_html(get_the_title()); ?></p>
                 <p><?php echo esc_html(get_the_excerpt()); ?></p>
@@ -23,13 +23,13 @@ if ($query->have_posts()) :
     endwhile;
 else :
     ?>
-    <p align="center">No posts found</p>
+    <p class="kmfnb-text-center">No posts found</p>
     <?php
 endif;
 
 // Adding pagination
 ?>
-<p align="center">
+<p class="kmfnb-text-center">
     <?php
     echo paginate_links(array(
         'total' => $query->max_num_pages,

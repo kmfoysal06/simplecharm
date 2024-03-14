@@ -4,7 +4,7 @@ get_header();
 if (have_posts()) :
     while (have_posts()) : the_post();
         ?>
-        <div class="post" align="center">
+        <div class="post" class="kmfnb-text-center">
             <h1 class="post-title"><?php echo esc_html(get_the_title()); ?></h1>
             <div class="post-meta">
                 <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>

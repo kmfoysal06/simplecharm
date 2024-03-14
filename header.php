@@ -20,7 +20,7 @@
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <header align="center" role="banner">
+    <header class="kmfnb-text-center" role="banner">
        <span>
          <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
             <nav role="navigation">
