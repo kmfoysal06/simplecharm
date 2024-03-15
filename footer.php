@@ -5,7 +5,23 @@ if (!defined('ABSPATH')) {
 ?>
 </main>
 <footer role="contentinfo">
-    <p class="kmdsc-text-center">&copy; <?php echo date('Y'); ?> SimpleCharm Blog - This theme is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 or later</a>.</p>
+    <footer class="kmfsc-footer">
+        <div class="kmfsc-footer-container">
+            <div class="kmfsc-footer-content">
+                <div class="kmfsc-footer-content-left">
+                    <?php
+                    if (has_nav_menu("footer")) {
+                        wp_nav_menu([
+                            'theme_location' => 'footer',
+                        ]);
+                    }
+                    ?>
+                </div>
+                <div class="kmfsc-footer-content-right">
+                    <p>&copy; <?php echo esc_html(date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?></p>
+                </div>
+            </div>
+        </div>
 </footer>
 </footer>
 <?php wp_footer(); ?>

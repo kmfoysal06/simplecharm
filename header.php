@@ -22,7 +22,7 @@ if(!defined('ABSPATH')) {
                     the_custom_logo();
                 }else{
                     ?>
-                    <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <h1 class="kmfsc-model-link"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
                     <?php
                 }
                 ?>
