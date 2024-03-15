@@ -31,8 +31,8 @@ function kmfsc_theme_setup(){
 	add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 100,
+				'width'       => 300,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
@@ -43,6 +43,8 @@ function kmfsc_theme_setup(){
 	add_theme_support('responsive-embeds');
 	// Add support for default block styles.
 	add_theme_support('wp-block-styles');
+    // Add support for full and wide align images.
+    add_theme_support('align-wide');
     register_nav_menus(array(
         'primary' => esc_html__('Primary Menu','simplecharm'),
         'footer' => esc_html__('Footer Menu','simplecharm')
@@ -61,9 +63,9 @@ if(function_exists('add_action')){
 
 function kmfsc_register_sidebars(){
     register_sidebar( [
-        'name' => __('Post Page Sidebar','simple-charm'),
+        'name' => __('Post Page Sidebar','simplecharm'),
         'id' => 'kmfsc_post_sidebar',
-        'description' => __("Sidebar For Post Page",'simple-charm'),
+        'description' => __("Sidebar For Post Page",'simplecharm'),
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="kmfsc-widget-title">',
@@ -72,9 +74,9 @@ function kmfsc_register_sidebars(){
     );
     register_sidebar(
         [
-            'name' => __('Home Page Sidebar','simple-charm'),
+            'name' => __('Home Page Sidebar','simplecharm'),
             'id' => 'kmfsc_home_sidebar',
-            'description' => __("Sidebar For Home Page",'simple-charm'),
+            'description' => __("Sidebar For Home Page",'simplecharm'),
             'before_widget' => '<div id="%1$s" class="%2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="kmfsc-widget-title">',

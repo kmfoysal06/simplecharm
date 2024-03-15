@@ -15,7 +15,18 @@ if(!defined('ABSPATH')) {
     <?php wp_body_open(); ?>
     <header class="kmfsc-text-center" role="banner">
        <span>
-         <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
+              <!-- get custom logo if its not set then blog title
+             -->
+                <?php
+                if(has_custom_logo()){
+                    the_custom_logo();
+                }else{
+                    ?>
+                    <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <?php
+                }
+                ?>
+            </span>
             <nav role="navigation" class="kmfsc-main-navigation">
                 <?php
                 if(has_nav_menu( "primary" )){
