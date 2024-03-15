@@ -8,7 +8,7 @@ get_header();
 if (have_posts()) :
     while (have_posts()) : the_post();
         ?>
-        <div class="post" class="kmfnb-text-center">
+        <div id="post-<?php the_ID(); ?>" <?php post_class("kmfsc-text-center kmfsc-content"); ?>>
             <h1 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h1>
             <div class="post-meta">
                 <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
@@ -18,9 +18,10 @@ if (have_posts()) :
         </div>
         <?php
     endwhile;
+    the_posts_navigation();
 else:
     ?>
-    <p class="kmfnb-text-center">No search results found for "<?php echo esc_html(get_search_query()); ?>"</p>
+    <p class="kmfsc-text-center">No search results found for "<?php echo esc_html(get_search_query()); ?>"</p>
     <?php
 endif;
 

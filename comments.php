@@ -19,7 +19,7 @@ if (post_password_required()) {
                         '%1$s thoughts on "%2$s"',
                         get_comments_number(),
                         'comments title',
-                        'nostyle-blog'
+                        'simplecharm'
                     )
                 ),
                 number_format_i18n(get_comments_number()),
@@ -41,15 +41,22 @@ if (post_password_required()) {
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
             <nav class="navigation comment-navigation" role="navigation">
 
-                <h1 class="screen-reader-text section-heading"><?php esc_html_e('Comment navigation', 'nostyle-blog'); ?></h1>
-                <div class="nav-previous"><?php previous_comments_link(esc_html__('&larr; Older Comments', 'nostyle-blog')); ?></div>
-                <div class="nav-next"><?php next_comments_link(esc_html__('Newer Comments &rarr;', 'nostyle-blog')); ?></div>
+                <h1 class="screen-reader-text section-heading"><?php esc_html_e('Comment navigation', 'simplecharm'); ?></h1>
+                <div class="nav-previous"><?php previous_comments_link(esc_html__('&larr; Older Comments', 'simplecharm')); ?></div>
+                <div class="nav-next"><?php next_comments_link(esc_html__('Newer Comments &rarr;', 'simplecharm')); ?></div>
             </nav><!-- .comment-navigation -->
         <?php endif; // Check for comment navigation ?>
 
         <?php if (!comments_open() && get_comments_number()) : ?>
-            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'nostyle-blog'); ?></p>
-        <?php endif; ?>
+            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'simplecharm'); ?></p>
+        <?php endif; 
+        //comment reply enqueue script
+        if (comments_open()) {
+            if (get_option('thread_comments')) {
+                wp_enqueue_script('comment-reply');
+            }
+        }
+?>
 
     <?php endif; // have_comments() ?>
 

@@ -5,8 +5,9 @@ if (!defined('ABSPATH')) {
 ?>
 </main>
 <footer role="contentinfo">
-    <p>&copy; <?php echo esc_html(date('Y')); ?> - <?php echo esc_html(get_bloginfo('name')); ?></p>
-    <?php wp_footer(); ?>
+    <p class="kmdsc-text-center">&copy; <?php echo date('Y'); ?> SimpleCharm Blog - This theme is licensed under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2 or later</a>.</p>
 </footer>
+</footer>
+<?php wp_footer(); ?>
 </body>
 </html>

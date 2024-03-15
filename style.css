@@ -1,17 +1,17 @@
 /*
- Theme Name: Nostyle Blog
+ Theme Name: SimpleCharm
  Author: kmfoysal06
  Author URI: http://profiles.wordpress.org/kmfoysal06
- Description: "Nostyle Blog" is a clean and minimalist WordPress theme designed for those who appreciate simplicity and elegance in their online presence. With its uncluttered layout and understated design, Nostyle Blog lets your content take center stage without distraction.
+ Description: "SimpleCharm" is a clean and minimalist WordPress theme designed for those who appreciate simplicity and elegance in their online presence. With its uncluttered layout and understated design, SimpleCharm lets your content take center stage without distraction.
  Requires at least: 4.0
- Tested up to: 6.4.2
+ Tested up to: 6.4
  Requires PHP: 7.4
  Version: 1.0
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
- Text Domain: nostyle-blog
- Tags: blog, low style,lightweight,nostyle,not-heavy,fast,one-column
- 
+ Text Domain: simplecharm
+ Tags: blog
+ Copyright: 2024 simplecharm Blog
   */
   body {
     font-family: "Open Sans", sans-serif;
@@ -21,30 +21,327 @@
     background-color: #f5f5f5;
 }
 
-.kmfnb-text-center {
+.kmfsc-text-center {
     text-align: center;
 }
-.kmfnb-content a {
+.kmfsc-content{
+    border: 1px solid #333;
+    padding:10px;
+}
+.kmfsc-content a,.kmfsc-main-navigation a , .kmfsc-edit-profile-btn a{
+    color: #0073aa;
+    text-decoration: none;
+}
+.kmfsc-content a:hover, .kmfsc-main-navigation a:hover,.kmfsc-edit-profile-btn a:hover {
+    color: #0093d0;
+}
+.kmfsc-content a:focus, .kmfsc-main-navigation a:focus,.kmfsc-edit-profile-btn a:focus {
+    color: #0093d0;
+}
+.kmfsc-content a:active ,.kmfsc-main-navigation a:active,.kmfsc-edit-profile-btn a:active {
+    color: #0093d0;
+}
+.kmfsc-content a:visited, .kmfsc-main-navigation a:visited,.kmfsc-edit-profile-btn a:visited {
     color: #0073aa;
 }
-.kmfnb-content a:hover {
+.kmfsc-content a:visited:hover, .kmfsc-main-navigation a:visited:hover,.kmfsc-edit-profile-btn a:visited:hover {
     color: #0093d0;
 }
-.kmfnb-content a:focus {
+.kmfsc-content a:visited:focus, .kmfsc-main-navigation a:visited:focus ,.kmfsc-edit-profile-btn a:visited:focus{
     color: #0093d0;
 }
-.kmfnb-content a:active {
+.kmfsc-content a:visited:active, .kmfsc-main-navigation a:visited:active,.kmfsc-edit-profile-btn a:visited:active {
     color: #0093d0;
 }
-.kmfnb-content a:visited {
-    color: #0073aa;
+.wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
+    padding: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
-.kmfnb-content a:visited:hover {
-    color: #0093d0;
+.wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    max-width: 100%;
+    height: auto;
 }
-.kmfnb-content a:visited:focus {
-    color: #0093d0;
+.wp-caption p.wp-caption-text {
+    font-size: 0.875em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
 }
-.kmfnb-content a:visited:active {
-    color: #0093d0;
+.sticky {
+    background-color: #f5f5f5;
+    border: 1px solid #dd0101;
+    border-left-width:5px;
+}
+.sticky img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    max-width: 100%;
+    height: auto;
+}
+.sticky p.wp-caption-text {
+    font-size: 0.875em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+}
+.sticky .wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
+    padding: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.sticky .wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    max-width: 100%;
+    height: auto;
+}
+.sticky .wp-caption p.wp-caption-text {
+    font-size: 0.875em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+}
+.gallery-caption {
+    font-size: 0.875em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+}
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+}
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wp-caption.alignleft {
+    margin-right: 1.5em;
+}
+.wp-caption.alignright {
+    margin-left: 1.5em;
+}
+.wp-caption.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+}
+a img.alignleft {
+    margin-right: 1.5em;
+}
+a img.alignright {
+    margin-left: 1.5em;
+}
+a img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+}
+.wp-caption.alignnone , a img.alignnone {
+    margin-right: 0;
+    margin-left: 0;
+}
+.wp-caption.alignnone {
+    margin-bottom: 1.5em;
+}
+.wp-caption.alignnone img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    max-width: 100%;
+    height: auto;
+}
+.wp-caption.alignnone p.wp-caption-text {
+    font-size: 0.875em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+}
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* styling the nav menu in classic menu style like the theme content a style loaded by wp_nav_menu */
+.kmfsc-main-navigation {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.kmfsc-main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.kmfsc-main-navigation li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.kmfsc-main-navigation a {
+    display: block;
+    padding: .5em;
+}
+.kmfsc-main-navigation a:hover {
+    background-color: #f5f5f5;
+}
+
+.kmfsc-main-navigation a:focus {
+    background-color: #f5f5f5;
+}
+.kmfsc-main-navigation a:active {
+    background-color: #f5f5f5;
+}
+.kmfsc-main-navigation ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/*styling single.php page*/
+.kmfsc-single-container, .kmfsc-posts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.kmfsc-single-container div:nth-child(1), .kmfsc-post-container{
+    grid-column: 1 / 4;
+}
+/* styling the sidebar */
+#kmfac-homepage-sidebar, #kmfac-postpage-sidebar,.kmfsc-post ,.kmfsc-post-container{
+    border: 1px solid #300f00;
+    padding: 10px 30px;
+    position: relative;
+}
+
+#kmfac-homepage-sidebar::before,#kmfac-postpage-sidebar::before,.kmfsc-post::before,.kmfsc-post-container::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #000;
+    top: 0;
+    left: 0;
+}
+
+#kmfac-homepage-sidebar::after, #kmfac-postpage-sidebar::after,.kmfsc-post::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #000;
+    bottom: 0;
+    right: 0;
+}
+/* styling the pagination */
+nav.navigation.pagination {
+    text-align: center;
+    margin: 10px;
+}
+
+nav.navigation.pagination a {
+    border: 1px solid #000;
+    padding: 5px;
+    text-decoration:none;
+    color:currentcolor;
+}
+/*search page navigation*/
+.posts-navigation .nav-links{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.posts-navigation .nav-links a {
+    text-decoration: none;
+    color: currentColor;
+}
+/*styling comment box */
+.comment-body {
+    border: 1px solid #090909;
+    padding: 10px;
+    /* list-style: none; */
+}
+
+.bypostauthor .comment-body{
+    position:relative;
+    margin:10px 0 0 0;
+}
+.bypostauthor .comment-body::before{
+    position:absolute;
+    content:'author';
+    top:0;
+    right:0;
+    background:#f00;
+    padding:5px;
+    border-radius:0px 0px 0px 10px;
+    color:#fff;
+    font-weight:bold;
+}
+.reply a {
+    text-decoration: none;
+    color: currentColor;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+/*edit profile link / button*/
+.kmfsc-edit-profile-btn{
+	display:block;
+}
+.kmfsc-edit-profile-btn a{
+	border:1px solid currentColor;
+	padding:5px 10px;
+	margin:auto
 }
