@@ -18,28 +18,20 @@ function kmfsc_theme_setup(){
 				'style',
 				'script',
 			) );
-	add_theme_support(
-			'custom-background',
-			apply_filters(
-				'fairy_custom_background_args',
-				array(
-					'default-color' => 'e5ece9',
-					'default-image' => '',
-				)
-			)
-		);
     add_theme_support( "custom-header", [
     'flex-width'    => true,
 	'width'         => 980,
 	'flex-height'   => true,
 	'height'        => 200,
-	'default-image' => '',]
+	//'default-image' => get_template_directory_uri().'/assets/images/header-image.png',
+	//'uploads' => true
+	]
     );
 	add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 100,
-				'width'       => 300,
+				'height'      => 75,
+				'width'       => 225,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
@@ -53,8 +45,8 @@ function kmfsc_theme_setup(){
     // Add support for full and wide align images.
     add_theme_support('align-wide');
     register_nav_menus(array(
-        'primary' => esc_html__('Primary Menu','simplecharm'),
-        'footer' => esc_html__('Footer Menu','simplecharm')
+        'header' => esc_html__('Primary Header Menu','simplecharm'),
+        'footer' => esc_html__('Primary Footer Menu','simplecharm'),
     ));
 }
 if(function_exists('add_theme_support')){
@@ -100,23 +92,53 @@ if (is_singular() && comments_open() && get_option('thread_comments')) {
 }
 
 
-function add_default_widgets_to_sidebar() {
-    $sidebar_id = 'kmfsc_home_sidebar'; // Sidebar ID
 
-    // Get the current widget configuration
-    $sidebars_widgets = get_option( 'sidebars_widgets' );
-
-    // Add Latest Posts widget
-    $sidebars_widgets[ $sidebar_id ][] = 'recent-posts-2';
-
-    // Add Categories widget
-    $sidebars_widgets[ $sidebar_id ][] = 'categories-2';
-
-    // Save the updated widget configuration
-    update_option( 'sidebars_widgets', $sidebars_widgets );
+//adding settings to customizer
+function kmfsc_customize_register( $wp_customize ) {
+   $wp_customize->add_section('kmfsc_section', [
+		'title' => __("Header Option", "simplecharm"),
+		'priority' => 30
+   ]);
+   $wp_customize->add_setting('kmfsc_setting', [
+		'default' => "on",
+		'type' => 'theme_mod', // Specify type as theme_mod
+		'sanitize_callback' => 'kmfsc_sanitize_checkbox',
+   ]);
+   $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bg_in_grp', [
+		'label'      => __( 'Header Image Behind The Header Contents', 'simplecharm' ),
+		'section'    => 'kmfsc_section',
+		'settings'   => 'kmfsc_setting',
+		'type' => 'checkbox'
+   ] ) );
+   function kmfsc_sanitize_checkbox( $checked ) {
+  // Boolean check.
+  return ( isset( $checked ) && true == $checked );
 }
-add_action( 'init', 'add_default_widgets_to_sidebar' );
+}
 
 
 
-//  function to set pagination in search page
+function kmfsc_customize_css_for_header_control() {
+    ?>
+         <style type="text/css">
+			 <?php if (get_theme_mod('kmfsc_setting')): ?>
+             header {
+				background-image: url("<?php header_image();?>");
+				background-repeat: no-repeat;
+				background-size: cover;
+				padding:20px;
+				background-position:center;
+			}
+			.kmfsc-header-image{
+				display:none;
+			}
+             <?php endif; ?>
+			header * {
+                 color: #<?php echo esc_attr(get_theme_mod('header_textcolor', '')); ?>!important;
+             }
+         </style>
+    <?php
+}
+
+add_action( 'wp_head', 'kmfsc_customize_css_for_header_control');
+add_action( 'customize_register', 'kmfsc_customize_register' );

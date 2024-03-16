@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
                     ?>
                 </div>
                 <div class="kmfsc-footer-content-right">
-                    <p>&copy; <?php echo esc_html(date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?></p>
+					<p>&copy; <?php echo esc_html(date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?></p>
                 </div>
             </div>
         </div>

@@ -14,10 +14,10 @@ if(!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header class="kmfsc-text-center" role="banner">
-    <div class="kmfsc-header-contents">   
-    <span>
-              <!-- get custom logo if its not set then blog title
-             -->
+    <div class="kmfsc-header">
+	<div class="kmfsc-header-contents">   
+			<span>
+              <!-- get blog title if custom logo  is not set  -->
                 <?php
                 if(has_custom_logo()){
                     the_custom_logo();
@@ -30,9 +30,9 @@ if(!defined('ABSPATH')) {
             </span>
             <nav role="navigation" class="kmfsc-main-navigation">
                 <?php
-                if(has_nav_menu( "primary" )){
+                if(has_nav_menu( "header" )){
                     wp_nav_menu( [
-                        'theme_location' => 'primary',
+                        'theme_location' => 'header',
                     ] );
                 }
                 ?>
@@ -42,6 +42,7 @@ if(!defined('ABSPATH')) {
         <div class="kmfsc-header-image">
         <img alt="header-image" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
         </div>
+    </div>
     </header>
     <br>
     <br>
