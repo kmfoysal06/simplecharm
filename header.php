@@ -14,7 +14,8 @@ if(!defined('ABSPATH')) {
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header class="kmfsc-text-center" role="banner">
-       <span>
+    <div class="kmfsc-header-contents">   
+    <span>
               <!-- get custom logo if its not set then blog title
              -->
                 <?php
@@ -37,6 +38,10 @@ if(!defined('ABSPATH')) {
                 ?>
                 <span><?php get_search_form(); ?></span>
             </nav>
+        </div>
+        <div class="kmfsc-header-image">
+        <img alt="header-image" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
+        </div>
     </header>
     <br>
     <br>

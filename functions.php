@@ -28,6 +28,13 @@ function kmfsc_theme_setup(){
 				)
 			)
 		);
+    add_theme_support( "custom-header", [
+    'flex-width'    => true,
+	'width'         => 980,
+	'flex-height'   => true,
+	'height'        => 200,
+	'default-image' => '',]
+    );
 	add_theme_support(
 			'custom-logo',
 			array(

@@ -254,13 +254,26 @@ a img.aligncenter {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/*styling single.php page*/
+/*styling single.php page and home page*/
 .kmfsc-single-container, .kmfsc-posts-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 10px;
 }
 .kmfsc-single-container div:nth-child(1), .kmfsc-post-container{
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
+}
+/* hide sidebar for mobile deveices */
+@media (max-width: 768px) {
+    .kmfsc-single-container div:nth-child(1), .kmfsc-post-container{
+        grid-column: 1 / 4;
+    }
+    .kmfsc-single-container, .kmfsc-posts-container{
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+        margin: 0;
+    }
 }
 /* styling the sidebar */
 #kmfac-homepage-sidebar, #kmfac-postpage-sidebar,.kmfsc-post ,.kmfsc-post-container{
@@ -347,4 +360,10 @@ nav.navigation.pagination a {
 	border:1px solid currentColor;
 	padding:5px 10px;
 	margin:auto
+}
+
+/* style the header */
+.kmfsc-header-image img {
+    max-width: 100%;
+    height: auto;
 }
