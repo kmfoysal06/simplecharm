@@ -45,14 +45,17 @@ function kmfsc_theme_setup() {
         'footer' => esc_html__('Primary Footer Menu', 'simplecharm'),
     ));
 }
-add_action('after_setup_theme', 'kmfsc_theme_setup');
+if(function_exists("kmfsc_theme_setup")){
+	add_action('after_setup_theme', 'kmfsc_theme_setup');
+}
 
 // Enqueue styles
 function kmfsc_load_assets() {
     wp_enqueue_style('kmfsc-style', get_stylesheet_uri(), array(), '1.0.0', 'all');
 }
-add_action('wp_enqueue_scripts', 'kmfsc_load_assets');
-
+if(function_exists("kmfsc_load_assets")){
+	add_action('wp_enqueue_scripts', 'kmfsc_load_assets');
+}
 // Register sidebars
 function kmfsc_register_sidebars() {
     register_sidebar(array(
@@ -75,8 +78,9 @@ function kmfsc_register_sidebars() {
         'after_title'   => '</h3>',
     ));
 }
-add_action("widgets_init", "kmfsc_register_sidebars");
-
+if(function_exists("kmfsc_register_sidebars")){
+	add_action("widgets_init", "kmfsc_register_sidebars");
+}
 // Enqueue comment-reply script
 if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -104,8 +108,9 @@ function kmfsc_customize_register($wp_customize) {
     ));
 }
 
-add_action('customize_register', 'kmfsc_customize_register');
-
+if(function_exists('kmfsc_customize_register')){
+	add_action('customize_register', 'kmfsc_customize_register');
+}
 function kmfsc_sanitize_checkbox($checked) {
     // Boolean check.
     return (isset($checked) && true == $checked);
@@ -119,8 +124,9 @@ function kmfsc_customizer_live_preview() {
         wp_localize_script('kmfsc-customizer', 'kmfsc_header_info', array('header_image' => $header_image_url));
     }
 }
-add_action('customize_preview_init', 'kmfsc_customizer_live_preview');
-
+if(function_exists('kmfsc_customizer_live_preview')){
+	add_action('customize_preview_init', 'kmfsc_customizer_live_preview');
+}
 // Customize CSS for header control
 function kmfsc_customize_css_for_header_control() {
     if (get_theme_mod('kmfsc_setting')) :
@@ -143,4 +149,6 @@ function kmfsc_customize_css_for_header_control() {
         <?php
     endif;
 }
-add_action('wp_head', 'kmfsc_customize_css_for_header_control');
+if(function_exists('kmfsc_customize_css_for_header_control')){
+	add_action('wp_head', 'kmfsc_customize_css_for_header_control');
+}
