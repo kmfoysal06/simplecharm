@@ -12,7 +12,10 @@ if(!defined('ABSPATH')) {
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
+	<?php wp_body_open(); ?>
+	<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#kmfsc-content">
+	<?php _e( 'Skip to content', 'simplecharm' ); ?></a>
     <header class="kmfsc-text-center" role="banner">
     <div class="kmfsc-header">
 	<div class="kmfsc-header-contents">   
@@ -23,7 +26,7 @@ if(!defined('ABSPATH')) {
                     the_custom_logo();
                 }else{
                     ?>
-                    <h1 class="kmfsc-model-link"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <h1 class="kmfsc-model-link kmf-model-shadow"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
                     <?php
                 }
                 ?>
@@ -46,4 +49,4 @@ if(!defined('ABSPATH')) {
     </header>
     <br>
     <br>
-    <main role="main">
+    <main role="main" id="kmfsc-content" tabindex="-1">

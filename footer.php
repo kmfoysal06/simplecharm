@@ -4,8 +4,8 @@ if (!defined('ABSPATH')) {
 }
 ?>
 </main>
-<footer role="contentinfo">
-    <footer class="kmfsc-footer">
+<footer role="contentinfo" class="kmfsc-theme-footer">
+    <div class="kmfsc-footer">
         <div class="kmfsc-footer-container">
             <div class="kmfsc-footer-content">
                 <div class="kmfsc-footer-content-left">
@@ -18,11 +18,11 @@ if (!defined('ABSPATH')) {
                     ?>
                 </div>
                 <div class="kmfsc-footer-content-right">
-					<p>&copy; <?php echo esc_html(date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?></p>
+                    <p>&copy; <?php echo esc_html(date('Y')); ?> <?php echo esc_html(get_bloginfo('name')); ?></p>
                 </div>
             </div>
         </div>
-</footer>
+    </div>
 </footer>
 <?php wp_footer(); ?>
 </body>

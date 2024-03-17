@@ -11,7 +11,7 @@
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: simplecharm
  Tags: blog
- Copyright: 2024 simplecharm Blog
+ Copyright: This theme, like WordPress, is licensed under the GPL.Use it to make something cool, have fun, and share what you've learned with others.
   */
   body {
     font-family: "Open Sans", sans-serif;
@@ -20,12 +20,18 @@
     color: #333;
     background-color: #f5f5f5;
 }
-
+	pre{
+		text-wrap:wrap;
+	}
 .kmfsc-text-center {
     text-align: center;
 }
 .kmfsc-model-link a{
     text-decoration: none;
+}
+
+.kmf-model-shadow{
+	text-shadow: 1px 1px 1px #fff;
 }
 .kmfsc-content{
     border: 1px solid #333;
@@ -236,21 +242,21 @@ a img.aligncenter {
     padding: .5em;
 }
 .kmfsc-main-navigation a:hover {
-    background-color: #f5f5f5;
+    color: #f5f5f5;
 }
 
 .kmfsc-main-navigation a:focus {
-    background-color: #f5f5f5;
+    color: #f5f5f5;
 }
 .kmfsc-main-navigation a:active {
-    background-color: #f5f5f5;
+    color: #f5f5f5;
 }
 .kmfsc-main-navigation ul ul {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #f5f5f5;
+	color: #f5f5f5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -327,7 +333,15 @@ nav.navigation.pagination a {
 .comment-body {
     border: 1px solid #090909;
     padding: 10px;
-    /* list-style: none; */
+}
+.wp-block-post-comments-form input[type=submit] {
+    border: none;
+    padding: 10px;
+    background: #000;
+    color: #fafafa;
+}
+.wp-block-post-comments-form input[type=submit]:is(:hover,:focus) {
+	background:#000000f2;
 }
 
 .bypostauthor .comment-body{
@@ -368,15 +382,16 @@ nav.navigation.pagination a {
     height: auto;
 }
 /* styling the footer */
-footer {
+.kmfsc-theme-footer {
     background: #808080;
     width: 100%;
     min-height: 5rem;
     display: grid;
     place-items: center;
 }
-footer li{
+.kmfsc-theme-footer li{
 	list-style:none;
+	margin:5px;
 }
 .kmfsc-footer-content-left ul {
 	display: flex;
@@ -403,7 +418,13 @@ footer li{
 	border:none;
 	padding:5px 10px;
 }
+.search-submit{
+	cursor:pointer;
+}
 .search-field:focus{
 	border:none;
 	outline:none;
+}
+#kmfsc-content[tabindex="-1"]:focus {
+  outline: 0;
 }

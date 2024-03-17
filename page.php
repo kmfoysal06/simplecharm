@@ -20,7 +20,7 @@ if (have_posts()) :
     endwhile;
 else:
     ?>
-    <p><?php esc_html( "No posts found" ); ?></p>
+	<p><?php echo esc_html__( "No posts found", "simplecharm" ); ?></p>
     <?php
 endif;
 get_footer();
