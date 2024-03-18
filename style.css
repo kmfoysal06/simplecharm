@@ -20,9 +20,9 @@
     color: #333;
     background-color: #f5f5f5;
 }
-	pre{
+pre{
 		text-wrap:wrap;
-	}
+}
 .kmfsc-text-center {
     text-align: center;
 }
@@ -32,6 +32,7 @@
 
 .kmf-model-shadow{
 	text-shadow: 1px 1px 1px #fff;
+	text-shadow: 2px 1px 2px #00f;
 }
 .kmfsc-content{
     border: 1px solid #333;
@@ -59,7 +60,7 @@
 .kmfsc-model-link a,.kmfsc-content a:visited:focus, .kmfsc-main-navigation a:visited:focus ,.kmfsc-edit-profile-btn a:visited:focus,footer lia:visited:focus{
     color: #0093d0;
 }
-.kmfsc-model-link a,.kmfsc-content a:visited:active, .kmfsc-main-navigation a:visited:active,.kmfsc-edit-profile-btn a:visited:active,footer li a:visited:active, {
+.kmfsc-model-link a,.kmfsc-content a:visited:active, .kmfsc-main-navigation a:visited:active,.kmfsc-edit-profile-btn a:visited:active,footer li a:visited:active {
     color: #0093d0;
 }
 .wp-caption {
@@ -226,39 +227,81 @@ a img.aligncenter {
     text-align: center;
     margin: 0;
     padding: 0;
+    position: relative; /* Adding relative positioning */
 }
+
 .kmfsc-main-navigation ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.kmfsc-main-navigation li {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-}
-.kmfsc-main-navigation a {
-    display: block;
-    padding: .5em;
-}
-.kmfsc-main-navigation a:hover {
-    color: #f5f5f5;
+
+.kmfsc-main-navigation ul li {
+    position: relative;
+    display: inline-block; /* Displaying list items inline */
 }
 
-.kmfsc-main-navigation a:focus {
-    color: #f5f5f5;
+.kmfsc-main-navigation ul li:hover > .sub-menu {
+    display: block;
 }
-.kmfsc-main-navigation a:active {
-    color: #f5f5f5;
-}
-.kmfsc-main-navigation ul ul {
+
+.kmfsc-main-navigation ul li .sub-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-	color: #f5f5f5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 100%; /* Positioning sub-menu to the right of parent */
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Adding arrow indicators */
+.kmfsc-main-navigation ul.has-submenu:after li {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent #000; /* Arrow color */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Adjust arrow for submenu items */
+.kmfsc-main-navigation ul ul li:after {
+    display: none; /* Hide arrow for submenu items */
+}
+
+
+.kmfsc-main-navigation ul li .sub-menu li {
+    width: 100%;
+    text-align: left;
+}
+
+.kmfsc-main-navigation ul li .sub-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.kmfsc-main-navigation ul li .sub-menu a:hover {
+    background-color: #f4f4f4;
+}
+
+.kmfsc-main-navigation a {
+    padding: .5em;
+    text-decoration: none;
+}
+
+.kmfsc-main-navigation a:hover {
+    text-decoration: underline;
+}
+
 
 /*styling single.php page and home page*/
 .kmfsc-single-container, .kmfsc-posts-container{
@@ -266,6 +309,9 @@ a img.aligncenter {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
     margin: 10px;
+}
+.post-author{
+	text-decoration:underline;
 }
 .kmfsc-single-container div:nth-child(1), .kmfsc-post-container{
     grid-column: 1 / 3;
@@ -375,7 +421,9 @@ nav.navigation.pagination a {
 	padding:5px 10px;
 	margin:auto
 }
-
+.kmfsc-edit-profile-btn a:hover{
+	text-decoration:underline!important;
+}
 /* style the header */
 .kmfsc-header-image img {
     max-width: 100%;
@@ -393,6 +441,9 @@ nav.navigation.pagination a {
 	list-style:none;
 	margin:5px;
 }
+.kmfsc-theme-footer li a:hover{
+	text-decoration:underline;
+}
 .kmfsc-footer-content-left ul {
 	display: flex;
 	justify-content: space-evenly;
@@ -406,7 +457,16 @@ nav.navigation.pagination a {
 	justify-content:center;
 	text-align:center;
 }
+.kmfsc-theme-footer {
+    max-width: 100%;
+    display: flex;
+}
 
+.kmfsc-footer-content-left div ul * {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+}
 @media (max-width: 768px) {
 	.kmfsc-footer-content-left ul{
 		flex-direction:column;

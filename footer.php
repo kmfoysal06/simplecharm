@@ -10,9 +10,9 @@ if (!defined('ABSPATH')) {
             <div class="kmfsc-footer-content">
                 <div class="kmfsc-footer-content-left">
                     <?php
-                    if (has_nav_menu("footer")) {
+                    if (has_nav_menu("kmfsc_footer")) {
                         wp_nav_menu([
-                            'theme_location' => 'footer',
+                            'theme_location' => 'kmfsc_footer',
                         ]);
                     }
                     ?>

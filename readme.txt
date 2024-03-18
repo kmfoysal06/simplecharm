@@ -17,6 +17,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
+=== Images ===
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+header-image.jpg - ttps://wordpress.org/photos/photo/1566540902/
+
 == Installation ==
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in SimpleCharm in the search form and press the 'Enter' key on your keyboard.

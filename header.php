@@ -13,7 +13,6 @@ if(!defined('ABSPATH')) {
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#kmfsc-content">
 	<?php _e( 'Skip to content', 'simplecharm' ); ?></a>
     <header class="kmfsc-text-center" role="banner">
@@ -33,9 +32,9 @@ if(!defined('ABSPATH')) {
             </span>
             <nav role="navigation" class="kmfsc-main-navigation">
                 <?php
-                if(has_nav_menu( "header" )){
+                if(has_nav_menu( "kmfsc_header" )){
                     wp_nav_menu( [
-                        'theme_location' => 'header',
+                        'theme_location' => 'kmfsc_header',
                     ] );
                 }
                 ?>

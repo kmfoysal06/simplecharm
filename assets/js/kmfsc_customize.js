@@ -5,7 +5,7 @@
  * then make any necessary changes to the page using jQuery.
  */
 ( function( $ ) {
-		function isValidURL(url) {
+		function kmfsc_isValidURL(url) {
 			try {
 				new URL(url);
 				return true;
@@ -16,7 +16,7 @@
 	wp.customize( 'kmfsc_setting', function( value ) {
 		value.bind( function( newval ) {
 		if(newval){
-			if(isValidURL(kmfsc_header_info.header_image)){
+			if(kmfsc_isValidURL(kmfsc_header_info.header_image)){
 				$("header").css("background-image",`url(${kmfsc_header_info["header_image"]})`);
 				$("header").css("background-repeat","no-repeat");
 				$("header").css("background-size","cover");
