@@ -49,6 +49,12 @@ if (post_password_required()) {
         <?php if (!comments_open() && get_comments_number()) : ?>
             <p class="no-comments"><?php esc_html_e('Comments are closed.', 'simplecharm'); ?></p>
         <?php endif; 
+            //comments reply enqueue
+            if (comments_open()) {
+                if (get_option('thread_comments')) {
+                  wp_enqueue_script('comment-reply');
+                }
+            }
 ?>
 
     <?php endif; // have_comments() ?>

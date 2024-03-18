@@ -1,6 +1,6 @@
 === SimpleCharm ===
 Contributors: kmfoysal06
-Requires at least: 4.0
+Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.4
 Stable tag: 1.1
@@ -19,7 +19,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 === Images ===
 License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
-header-image.jpg - ttps://wordpress.org/photos/photo/1566540902/
+header-image.jpg - https://wordpress.org/photos/photo/1566540902/
 
 == Installation ==
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
