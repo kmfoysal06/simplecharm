@@ -16,7 +16,7 @@ if (have_posts()) : ?>
         }else{
             ?>
             <div id="post-<?php the_ID(); ?>" <?php post_class("kmfsc-post"); ?>>
-            <h1 class="post-title kmfsc-text-center"><?php echo apply_filters('the_content', wp_kses_post(get_the_title())); ?></h1>
+            <h1 class="post-title kmfsc-text-center"><?php echo apply_filters('the_title', sanitize_text_field(get_the_title())); ?></h1>
             <p class="kmfsc-text-center"><?php the_post_thumbnail('medium'); ?></p>
             <div class="post-meta">
                 <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>

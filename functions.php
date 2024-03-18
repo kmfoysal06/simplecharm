@@ -38,12 +38,12 @@ function kmfsc_theme_setup() {
     add_theme_support('responsive-embeds');
     add_theme_support('wp-block-styles');
     add_theme_support('align-wide');
+    add_theme_support( 'editor-styles' );
 
     // Register navigation menus
     register_nav_menus(array(
         'kmfsc_header' => esc_html__('Primary Header Menu', 'simplecharm'),
-        'kmfsc_footer' => esc_html__('Primary Footer Menu', 'simplecharm'),
-    ));
+     ));
 }
 if(function_exists("kmfsc_theme_setup")){
 	add_action('after_setup_theme', 'kmfsc_theme_setup');

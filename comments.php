@@ -7,7 +7,7 @@ if (post_password_required()) {
     return;
 } ?>
 <a class="skip-link screen-reader-text" href="#comments"><?php esc_html_e('Skip to comment navigation', 'simplecharm'); ?></a>
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area" tabindex="-1">
 
     <?php if (have_comments()) : ?>
         <h2 class="comments-title">
