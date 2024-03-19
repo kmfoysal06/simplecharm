@@ -19,7 +19,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 === Images ===
 License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
-header-image.jpg - https://wordpress.org/photos/photo/1566540902/
+kmfsc-header-image.jpg - https://wordpress.org/photos/photo/1566540902/
 
 == Installation ==
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.

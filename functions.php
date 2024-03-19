@@ -25,7 +25,7 @@ function kmfsc_theme_setup() {
         'width'         => 980,
         'flex-height'   => true,
         'height'        => 200,
-        'default-image' => get_template_directory_uri() . '/assets/images/header-image.jpg',
+        'default-image' => get_template_directory_uri() . '/assets/images/kmfsc-header-image.jpg',
         'uploads'       => true,
     ));
     add_theme_support('custom-logo', array(
@@ -117,7 +117,7 @@ function kmfsc_customizer_live_preview() {
     wp_enqueue_script('kmfsc-customizer', get_template_directory_uri() . '/assets/js/kmfsc_customize.js', array('jquery', 'customize-preview'), '', true);
     $header_image_url = get_header_image();
     if (filter_var($header_image_url, FILTER_VALIDATE_URL)) {
-        wp_localize_script('kmfsc-customizer', 'kmfsc_header_info', array('header_image' => $header_image_url));
+        wp_localize_script('kmfsc-customizer', 'kmfsc_header_info', array('kmfsc_header_image' => $header_image_url));
     }
 }
 if(function_exists('kmfsc_customizer_live_preview')){
@@ -139,7 +139,7 @@ function kmfsc_customize_css_for_header_control() {
                 display: none;
             }
             header * {
-                color: #<?php echo esc_attr(get_theme_mod('header_textcolor', '#0093d0')); ?>!important;
+                color: #<?php echo esc_attr(get_theme_mod('header_textcolor', '0093d0')); ?>!important;
             }
         </style>
         <?php

@@ -16,8 +16,8 @@
 	wp.customize( 'kmfsc_setting', function( value ) {
 		value.bind( function( newval ) {
 		if(newval){
-			if(kmfsc_isValidURL(kmfsc_header_info.header_image)){
-				$("header").css("background-image",`url(${kmfsc_header_info["header_image"]})`);
+			if(kmfsc_isValidURL(kmfsc_header_info.kmfsc_header_image)){
+				$("header").css("background-image",`url(${kmfsc_header_info["kmfsc_header_image"]})`);
 				$("header").css("background-repeat","no-repeat");
 				$("header").css("background-size","cover");
 				$("header").css("padding","20px");
