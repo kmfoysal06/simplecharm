@@ -38,29 +38,29 @@ pre{
     border: 1px solid #333;
     padding:10px;
 }
-.kmfsc-content a,.kmfsc-main-navigation a , .kmfsc-edit-profile-btn a,footer li a{
+.kmfsc-content a,.kmfsc-main-navigation a , .kmfsc-edit-profile-btn a{
     color: #0073aa;
-    text-decoration: none;
+    text-decoration: underline;
 }
-.kmfsc-model-link a,.kmfsc-content a:hover, .kmfsc-main-navigation a:hover,.kmfsc-edit-profile-btn a:hover,footer li a:hover{
+.kmfsc-model-link a,.kmfsc-content a:hover, .kmfsc-main-navigation a:hover,.kmfsc-edit-profile-btn a:hover{
     color: #0093d0;
 }
-.kmfsc-model-link a,.kmfsc-content a:focus, .kmfsc-main-navigation a:focus,.kmfsc-edit-profile-btn a:focus ,footer li a:focus{
+.kmfsc-model-link a,.kmfsc-content a:focus, .kmfsc-main-navigation a:focus,.kmfsc-edit-profile-btn a:focus {
     color: #0093d0;
 }
-.kmfsc-model-link a,.kmfsc-content a:active ,.kmfsc-main-navigation a:active,.kmfsc-edit-profile-btn a:active,footer li a:active{
+.kmfsc-model-link a,.kmfsc-content a:active ,.kmfsc-main-navigation a:active,.kmfsc-edit-profile-btn a:active{
     color: #0093d0;
 }
-.kmfsc-model-link a,.kmfsc-content a:visited, .kmfsc-main-navigation a:visited,.kmfsc-edit-profile-btn a:visited ,footer li a:visited{
+.kmfsc-model-link a,.kmfsc-content a:visited, .kmfsc-main-navigation a:visited,.kmfsc-edit-profile-btn a:visited {
     color: #0073aa;
 }
-.kmfsc-model-link a,.kmfsc-content a:visited:hover, .kmfsc-main-navigation a:visited:hover,.kmfsc-edit-profile-btn a:visited:hover ,footer li a:visited:hover{
+.kmfsc-model-link a,.kmfsc-content a:visited:hover, .kmfsc-main-navigation a:visited:hover,.kmfsc-edit-profile-btn a:visited:hover{
     color: #0093d0;
 }
-.kmfsc-model-link a,.kmfsc-content a:visited:focus, .kmfsc-main-navigation a:visited:focus ,.kmfsc-edit-profile-btn a:visited:focus,footer lia:visited:focus{
+.kmfsc-model-link a,.kmfsc-content a:visited:focus, .kmfsc-main-navigation a:visited:focus ,.kmfsc-edit-profile-btn a:visited:focus{
     color: #0093d0;
 }
-.kmfsc-model-link a,.kmfsc-content a:visited:active, .kmfsc-main-navigation a:visited:active,.kmfsc-edit-profile-btn a:visited:active,footer li a:visited:active {
+.kmfsc-model-link a,.kmfsc-content a:visited:active, .kmfsc-main-navigation a:visited:active,.kmfsc-edit-profile-btn a:visited:active {
     color: #0093d0;
 }
 .wp-caption {
@@ -243,22 +243,20 @@ nav.kmfsc-main-navigation ul li a{
 }
 
 nav.kmfsc-main-navigation ul .sub-menu {
-    position:absolute;
-    width:100%;
-    left:0;
-	z-index:12;
-    transition: 0.3s;
-    transition-delay: 0.1s;
-    opacity: 0;
-    pointer-events: none;
-    }
-    nav.kmfsc-main-navigation ul li:hover .sub-menu {
-    opacity: 1;
-    pointer-events: auto;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 12;
+    display:none;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
-nav.kmfsc-main-navigation ul li a:hover {
-    background: #444;
+nav.kmfsc-main-navigation ul li:hover .sub-menu,
+nav.kmfsc-main-navigation ul li:focus-within .sub-menu {
+    display:flex;
+}
+nav.kmfsc-main-navigation ul li a:hover,
+nav.kmfsc-main-navigation ul li a:hover{
     text-decoration: underline;
 }
 
@@ -308,7 +306,9 @@ nav.kmfsc-main-navigation ul li a:hover {
     color:currentcolor;
 }
 
-#kmfsc-homepage-sidebar::before,#kmfsc-postpage-sidebar::before,.kmfsc-post::before,.kmfsc-post-container::before {
+#kmfsc-homepage-sidebar::before,#kmfsc-postpage-sidebar::before,
+.kmfsc-post::before,
+.kmfsc-post-container::before {
     content: '';
     position: absolute;
     height: 20px;
@@ -318,7 +318,8 @@ nav.kmfsc-main-navigation ul li a:hover {
     left: 0;
 }
 
-#kmfsc-homepage-sidebar::after, #kmfsc-postpage-sidebar::after,.kmfsc-post::after {
+#kmfsc-homepage-sidebar::after, #kmfsc-postpage-sidebar::after,
+.kmfsc-post::after {
     content: '';
     position: absolute;
     height: 20px;
@@ -357,9 +358,12 @@ nav.navigation.pagination a {
     padding: 10px;
     background: #000;
     color: #fafafa;
+    border:1px solid transparent;
 }
-.wp-block-post-comments-form input[type=submit]:is(:hover,:focus) {
-	background:#000000f2;
+.wp-block-post-comments-form input[type=submit]:hover,
+.wp-block-post-comments-form input[type=submit]:focus{
+	background:#151515f2;
+    border:1px solid #00f;
 }
 
 .bypostauthor .comment-body{
@@ -393,7 +397,8 @@ nav.navigation.pagination a {
 	padding:5px 10px;
 	margin:auto
 }
-.kmfsc-edit-profile-btn a:hover{
+.kmfsc-edit-profile-btn a:hover,
+.kmfsc-edit-profile-btn a:focus{
 	text-decoration:underline!important;
 }
 /* style the header */

@@ -23,8 +23,8 @@ if ($query->have_posts()) :
         <div id="post-<?php the_ID(); ?>" <?php post_class("kmfsc-text-center kmfsc-content"); ?>>
             <a href="<?php echo esc_url(get_the_permalink()); ?>">
                 <h3><?php echo apply_filters('the_title', sanitize_text_field(get_the_title())); ?></h3>
-                <p><?php echo apply_filters('the_excerpt', get_the_excerpt()); ?></p>
             </a>
+            <p><?php echo apply_filters('the_excerpt', get_the_excerpt()); ?></p>
         </div>
         <?php
     endwhile;
