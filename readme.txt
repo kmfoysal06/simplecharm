@@ -3,23 +3,22 @@ Contributors: kmfoysal06
 Requires at least: 5.0
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.1
+Stable tag: 1.2
 Text Domain: simplecharm
 Author URI: http://profiles.wordpress.org/kmfoysal06
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-
-"SimpleCharm" is a clean and minimalist WordPress theme designed for those who appreciate simplicity and elegance in their online presence. With its uncluttered layout and understated design, SimpleCharm lets your content take center stage without distraction.
-
 == Copyright ==
+SimpleCharm WordPress Theme, Copyright 2024 SimpleCharm
+SimpleCharm is distributed under the terms of the GNU GPL
+
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 === Images ===
 License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
-kmfsc-header-image.jpg - https://wordpress.org/photos/photo/1566540902/
+simplecharm-header-image.jpg - https://wordpress.org/photos/photo/1566540902/
 
 == Installation ==
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.

@@ -6,13 +6,21 @@
  Requires at least: 5.0
  Tested up to: 6.4
  Requires PHP: 7.4
- Version: 1.1
+ Version: 1.2
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: simplecharm
  Tags: blog , custom-header , custom-logo , custom-menu , editor-style , featured-images , right-sidebar , threaded-comments
  Copyright: This theme, like WordPress, is licensed under the GPL.Use it to make something cool, have fun, and share what you've learned with others.
   */
+
+
+  /* style resetor */
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   body {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
@@ -20,49 +28,8 @@
     color: #333;
     background-color: #f5f5f5;
 }
-pre{
-		text-wrap:wrap;
-}
-.kmfsc-text-center {
-    text-align: center;
-}
-.kmfsc-model-link a{
-    text-decoration: none;
-}
 
-.kmf-model-shadow{
-	text-shadow: 1px 1px 1px #fff;
-	text-shadow: 2px 1px 2px #00f;
-}
-.kmfsc-content{
-    border: 1px solid #333;
-    padding:10px;
-}
-.kmfsc-content a,.kmfsc-main-navigation a , .kmfsc-edit-profile-btn a{
-    color: #0073aa;
-    text-decoration: underline;
-}
-.kmfsc-model-link a,.kmfsc-content a:hover, .kmfsc-main-navigation a:hover,.kmfsc-edit-profile-btn a:hover{
-    color: #0093d0;
-}
-.kmfsc-model-link a,.kmfsc-content a:focus, .kmfsc-main-navigation a:focus,.kmfsc-edit-profile-btn a:focus {
-    color: #0093d0;
-}
-.kmfsc-model-link a,.kmfsc-content a:active ,.kmfsc-main-navigation a:active,.kmfsc-edit-profile-btn a:active{
-    color: #0093d0;
-}
-.kmfsc-model-link a,.kmfsc-content a:visited, .kmfsc-main-navigation a:visited,.kmfsc-edit-profile-btn a:visited {
-    color: #0073aa;
-}
-.kmfsc-model-link a,.kmfsc-content a:visited:hover, .kmfsc-main-navigation a:visited:hover,.kmfsc-edit-profile-btn a:visited:hover{
-    color: #0093d0;
-}
-.kmfsc-model-link a,.kmfsc-content a:visited:focus, .kmfsc-main-navigation a:visited:focus ,.kmfsc-edit-profile-btn a:visited:focus{
-    color: #0093d0;
-}
-.kmfsc-model-link a,.kmfsc-content a:visited:active, .kmfsc-main-navigation a:visited:active,.kmfsc-edit-profile-btn a:visited:active {
-    color: #0093d0;
-}
+/* Wordpress Default Styles*/
 .wp-caption {
     max-width: 100%;
     margin-bottom: 1.5em;
@@ -222,47 +189,130 @@ a img.aligncenter {
     z-index: 100000;
 }
 
+/* Utility Classes and Others */
+.simplecharm-text-center {
+    text-align: center;
+}
+.simplecharm-model-link a,
+.simplecharm-model-link{
+    text-decoration: none;
+}
+.block{
+    display: block;
+}
+.simplecharm-model-shadow{
+	text-shadow: 2px 1px 2px #00f;
+}
+.simplecharm-content{
+    border: 1px solid #333;
+    padding:10px;
+}
+.simplecharm-model-link a,
+.simplecharm-model-link,
+.simplecharm-content a,
+.simplecharm-main-navigation a,
+.simplecharm-edit-profile-btn a,
+.simplecharm-model-link p {
+    color: #0093d0;
+}
+.simplecharm-content p{
+    margin: 10px 0;
+    color: #070002;
+}
+.simplecharm-content a:visited,
+.simplecharm-main-navigation a:visited,
+.simplecharm-edit-profile-btn a:visited {
+    color: #0073aa;
+}
+
+
+.simplecharm-content a,
+.simplecharm-main-navigation a,
+.simplecharm-edit-profile-btn a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.simplecharm-content a:hover,
+.simplecharm-content a:focus,
+.simplecharm-main-navigation a:hover,
+.simplecharm-main-navigation a:focus,
+.simplecharm-edit-profile-btn a:hover,
+.simplecharm-edit-profile-btn a:focus{
+    text-decoration: underline;
+}
+
+
+.simplecharm-content a:focus,
+.simplecharm-main-navigation a:focus,
+.simplecharm-edit-profile-btn a:focus,
+.simplecharm-content a:hover,
+.simplecharm-main-navigation a:hover,
+.simplecharm-edit-profile-btn a:hover {
+    color: #0093d0;
+}
+
+
 /* styling header the nav menu */
-nav.kmfsc-main-navigation ul {
+.simplecharm-site-description {
+    color: #000;
+    text-shadow: 2px 1px 0px #fff;
+    font-size: 1.2em;
+    letter-spacing: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin:5px 0;
+}
+nav.simplecharm-main-navigation ul {
     list-style: none;
     position: relative;
     background: rgba(255,255,255,0.4);
+    margin:0 0 5px 0;
 }
-nav.kmfsc-main-navigation ul .sub-menu {
+nav.simplecharm-main-navigation ul .sub-menu {
     display: flex;
     flex-direction: column;
     float: left;
     width: 25%;
 }
-nav.kmfsc-main-navigation ul li {
+nav.simplecharm-main-navigation ul li {
     display: inline-block;
     margin: 10px;
 }
-nav.kmfsc-main-navigation ul li a{
+nav.simplecharm-main-navigation ul li a{
 	padding:10px;
 }
 
-nav.kmfsc-main-navigation ul .sub-menu {
+nav.simplecharm-main-navigation ul .sub-menu {
     position: absolute;
     width: 100%;
     left: 0;
     z-index: 12;
     display:none;
-    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
-nav.kmfsc-main-navigation ul li:hover .sub-menu,
-nav.kmfsc-main-navigation ul li:focus-within .sub-menu {
+nav.simplecharm-main-navigation ul li:hover .sub-menu,
+nav.simplecharm-main-navigation ul li:focus-within .sub-menu {
     display:flex;
 }
-nav.kmfsc-main-navigation ul li a:hover,
-nav.kmfsc-main-navigation ul li a:hover{
+nav.simplecharm-main-navigation ul li a:hover,
+nav.simplecharm-main-navigation ul li a:hover{
     text-decoration: underline;
 }
 
 
 /*styling single.php page and home page*/
-.kmfsc-single-container, .kmfsc-posts-container{
+.simplecharm-home-post-title a{
+    text-decoration: none;
+}
+.simplecharm-post-category{
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+}
+.simplecharm-single-container, .simplecharm-posts-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -271,44 +321,46 @@ nav.kmfsc-main-navigation ul li a:hover{
 .post-author{
 	text-decoration:underline;
 }
-.kmfsc-single-container div:nth-child(1), .kmfsc-post-container{
+.simplecharm-single-container div:nth-child(1), .simplecharm-post-container{
     grid-column: 1 / 3;
 }
 /* hide sidebar for mobile deveices */
 @media (max-width: 768px) {
-    .kmfsc-single-container div:nth-child(1), .kmfsc-post-container{
+    .simplecharm-single-container div:nth-child(1), .simplecharm-post-container{
         grid-column: 1 / 4;
     }
-    .kmfsc-single-container, .kmfsc-posts-container{
+    .simplecharm-single-container, .simplecharm-posts-container{
         grid-template-columns: 1fr;
         grid-gap: 0;
         margin: 0;
     }
 }
 /* styling the sidebar */
-#kmfsc-homepage-sidebar, #kmfsc-postpage-sidebar,.kmfsc-post ,.kmfsc-post-container{
+#simplecharm-homepage-sidebar, #simplecharm-postpage-sidebar,
+.simplecharm-post ,
+.simplecharm-post-container{
     border: 1px solid #300f00;
     width: calc(100% - 15px);
     padding: 10px;
     position: relative;
 }
-#kmfsc-homepage-sidebar, #kmfsc-postpage-sidebar {
+#simplecharm-homepage-sidebar, #simplecharm-postpage-sidebar {
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
 }
-#kmfsc-homepage-sidebar li{
+#simplecharm-homepage-sidebar li{
     list-style:none;
 }
-#kmfsc-homepage-sidebar a{
+#simplecharm-homepage-sidebar a{
     color:currentcolor;
 }
 
-#kmfsc-homepage-sidebar::before,#kmfsc-postpage-sidebar::before,
-.kmfsc-post::before,
-.kmfsc-post-container::before {
+#simplecharm-homepage-sidebar::before,#simplecharm-postpage-sidebar::before,
+.simplecharm-post::before,
+.simplecharm-post-container::before {
     content: '';
     position: absolute;
     height: 20px;
@@ -318,8 +370,8 @@ nav.kmfsc-main-navigation ul li a:hover{
     left: 0;
 }
 
-#kmfsc-homepage-sidebar::after, #kmfsc-postpage-sidebar::after,
-.kmfsc-post::after {
+#simplecharm-homepage-sidebar::after, #simplecharm-postpage-sidebar::after,
+.simplecharm-post::after {
     content: '';
     position: absolute;
     height: 20px;
@@ -339,6 +391,12 @@ nav.navigation.pagination a {
     padding: 5px;
     color:currentcolor;
 }
+.simplecharm-main-navigation a{
+    transition: all 0.3s;
+}
+.simplecharm-main-navigation a:hover {
+    background: #000;
+}
 /*search page navigation*/
 .posts-navigation .nav-links{
     display: flex;
@@ -354,16 +412,15 @@ nav.navigation.pagination a {
     padding: 10px;
 }
 .wp-block-post-comments-form input[type=submit] {
-    border: none;
     padding: 10px;
     background: #000;
     color: #fafafa;
-    border:1px solid transparent;
+    border:3px solid rgb(68, 68, 167);
 }
 .wp-block-post-comments-form input[type=submit]:hover,
 .wp-block-post-comments-form input[type=submit]:focus{
 	background:#151515f2;
-    border:1px solid #00f;
+    border-color: #00f;
 }
 
 .bypostauthor .comment-body{
@@ -389,34 +446,36 @@ nav.navigation.pagination a {
 }
 
 /*edit profile link / button*/
-.kmfsc-edit-profile-btn{
+.simplecharm-edit-profile-btn{
 	display:block;
 }
-.kmfsc-edit-profile-btn a{
+.simplecharm-edit-profile-btn a{
 	border:1px solid currentColor;
 	padding:5px 10px;
 	margin:auto
 }
-.kmfsc-edit-profile-btn a:hover,
-.kmfsc-edit-profile-btn a:focus{
+.simplecharm-edit-profile-btn a:hover,
+.simplecharm-edit-profile-btn a:focus{
 	text-decoration:underline!important;
 }
 /* style the header */
-.kmfsc-header-image img {
+.simplecharm-header-image img {
     max-width: 100%;
     height: auto;
 }
 /* styling the footer */
-.kmfsc-theme-footer {
+.simplecharm-theme-footer {
     background: #808080;
     padding: 20px 0; 
     text-align: center;
 }
 
 /*styling the search bar*/
-.search-field,.search-submit{
-	border:none;
-	padding:5px 10px;
+.search-field, .search-submit {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 .search-submit{
 	cursor:pointer;
@@ -425,6 +484,6 @@ nav.navigation.pagination a {
 	border:none;
 	outline:none;
 }
-#kmfsc-content[tabindex="-1"]:focus , #comments[tabindex="-1"]:focus {
+#simplecharm-content[tabindex="-1"]:focus , #comments[tabindex="-1"]:focus {
   outline: 0;
 }

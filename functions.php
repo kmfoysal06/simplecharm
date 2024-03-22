@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Theme setup
-function kmfsc_theme_setup() {
+function simplecharm_theme_setup() {
     // Add theme support
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
@@ -25,7 +25,7 @@ function kmfsc_theme_setup() {
         'width'         => 980,
         'flex-height'   => true,
         'height'        => 200,
-        'default-image' => get_template_directory_uri() . '/assets/images/kmfsc-header-image.jpg',
+        'default-image' => get_template_directory_uri() . '/assets/images/simplecharm-header-image.jpg',
         'uploads'       => true,
     ));
     add_theme_support('custom-logo', array(
@@ -42,92 +42,92 @@ function kmfsc_theme_setup() {
 
     // Register navigation menus
     register_nav_menus(array(
-        'kmfsc_header' => esc_html__('Primary Header Menu', 'simplecharm'),
+        'simplecharm_header' => esc_html__('Primary Header Menu', 'simplecharm'),
      ));
 }
-if(function_exists("kmfsc_theme_setup")){
-	add_action('after_setup_theme', 'kmfsc_theme_setup');
+if(function_exists("simplecharm_theme_setup")){
+	add_action('after_setup_theme', 'simplecharm_theme_setup');
 }
 
 // Enqueue styles
-function kmfsc_load_assets() {
-    wp_enqueue_style('kmfsc-style', get_stylesheet_uri(), array(), '1.0.0', 'all');
+function simplecharm_load_assets() {
+    wp_enqueue_style('simplecharm-style', get_stylesheet_uri(), array(), '1.0.0', 'all');
 }
-if(function_exists("kmfsc_load_assets")){
-	add_action('wp_enqueue_scripts', 'kmfsc_load_assets');
+if(function_exists("simplecharm_load_assets")){
+	add_action('wp_enqueue_scripts', 'simplecharm_load_assets');
 }
 // Register sidebars
-function kmfsc_register_sidebars() {
+function simplecharm_register_sidebars() {
     register_sidebar(array(
         'name'          => __('Post Page Sidebar', 'simplecharm'),
-        'id'            => 'kmfsc_post_sidebar',
+        'id'            => 'simplecharm_post_sidebar',
         'description'   => __("Sidebar For Post Page", 'simplecharm'),
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="kmfsc-widget-title">',
+        'before_title'  => '<h3 class="simplecharm-widget-title">',
         'after_title'   => '</h3>',
     ));
 
     register_sidebar(array(
         'name'          => __('Home Page Sidebar', 'simplecharm'),
-        'id'            => 'kmfsc_home_sidebar',
+        'id'            => 'simplecharm_home_sidebar',
         'description'   => __("Sidebar For Home Page", 'simplecharm'),
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="kmfsc-widget-title">',
+        'before_title'  => '<h3 class="simplecharm-widget-title">',
         'after_title'   => '</h3>',
     ));
 }
-if(function_exists("kmfsc_register_sidebars")){
-	add_action("widgets_init", "kmfsc_register_sidebars");
+if(function_exists("simplecharm_register_sidebars")){
+	add_action("widgets_init", "simplecharm_register_sidebars");
 }
 
 // Customize register
-function kmfsc_customize_register($wp_customize) {
-    $wp_customize->add_section('kmfsc_section', array(
+function simplecharm_customize_register($wp_customize) {
+    $wp_customize->add_section('simplecharm_section', array(
         'title'    => __("Header Option", "simplecharm"),
         'priority' => 30,
     ));
 
-    $wp_customize->add_setting('kmfsc_setting', array(
+    $wp_customize->add_setting('simplecharm_setting', array(
         'default'           => "on",
         'type'              => 'theme_mod',
-        'sanitize_callback' => 'kmfsc_sanitize_checkbox',
+        'sanitize_callback' => 'simplecharm_sanitize_checkbox',
         'transport'         => 'postMessage',
     ));
 
     $wp_customize->add_control('bg_in_grp', array(
         'label'    => __('Header Image Behind The Header Contents', 'simplecharm'),
-        'section'  => 'kmfsc_section',
-        'settings' => 'kmfsc_setting',
+        'section'  => 'simplecharm_section',
+        'settings' => 'simplecharm_setting',
         'type'     => 'checkbox',
     ));
 }
 
-if(function_exists('kmfsc_customize_register')){
-	add_action('customize_register', 'kmfsc_customize_register');
+if(function_exists('simplecharm_customize_register')){
+	add_action('customize_register', 'simplecharm_customize_register');
 }
-function kmfsc_sanitize_checkbox($checked) {
+function simplecharm_sanitize_checkbox($checked) {
     // Boolean check.
     return (isset($checked) && true == $checked);
 }
 
 // Customizer live preview
-function kmfsc_customizer_live_preview() {
-    wp_enqueue_script('kmfsc-customizer', get_template_directory_uri() . '/assets/js/kmfsc_customize.js', array('jquery', 'customize-preview'), '', true);
+function simplecharm_customizer_live_preview() {
+    wp_enqueue_script('simplecharm-customizer', get_template_directory_uri() . '/assets/js/simplecharm_customize.js', array('jquery', 'customize-preview'), '', true);
     $header_image_url = get_header_image();
     if (filter_var($header_image_url, FILTER_VALIDATE_URL)) {
-        wp_localize_script('kmfsc-customizer', 'kmfsc_header_info', array('kmfsc_header_image' => $header_image_url));
+        wp_localize_script('simplecharm-customizer', 'simplecharm_header_info', array('simplecharm_header_image' => $header_image_url));
     }
 }
-if(function_exists('kmfsc_customizer_live_preview')){
-	add_action('customize_preview_init', 'kmfsc_customizer_live_preview');
+if(function_exists('simplecharm_customizer_live_preview')){
+	add_action('customize_preview_init', 'simplecharm_customizer_live_preview');
 }
 // Customize CSS for header control
-function kmfsc_customize_css_for_header_control() {
-    if (get_theme_mod('kmfsc_setting')) :
-        ?>
+function simplecharm_customize_css_for_header_control() {
+    ?>
         <style type="text/css">
+    <?php if (get_theme_mod('simplecharm_setting')) : ?>
             header {
                 background-image: url("<?php echo esc_url(get_header_image()); ?>");
                 background-repeat: no-repeat;
@@ -135,16 +135,18 @@ function kmfsc_customize_css_for_header_control() {
                 padding: 20px;
                 background-position: center;
             }
-            .kmfsc-header-image {
+            .simplecharm-header-image {
                 display: none;
             }
+    <?php endif ; ?>
+    <?php if (get_theme_mod('header_textcolor')) : ?>
             header * {
                 color: #<?php echo esc_attr(get_theme_mod('header_textcolor', '0093d0')); ?>!important;
             }
+        <?php endif; ?>
         </style>
         <?php
-    endif;
 }
-if(function_exists('kmfsc_customize_css_for_header_control')){
-	add_action('wp_head', 'kmfsc_customize_css_for_header_control');
+if(function_exists('simplecharm_customize_css_for_header_control')){
+	add_action('wp_head', 'simplecharm_customize_css_for_header_control');
 }

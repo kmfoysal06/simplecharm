@@ -5,8 +5,8 @@ if (!defined('ABSPATH')) {
 
 get_header();
 ?>
-<div class="kmfsc-posts-container">
-<div class="kmfsc-post-container">
+<div class="simplecharm-posts-container">
+<div class="simplecharm-post-container">
 <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 // Load posts on the home page
@@ -20,17 +20,21 @@ $query = new WP_Query($args);
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
         ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class("kmfsc-text-center kmfsc-content"); ?>>
-            <a href="<?php echo esc_url(get_the_permalink()); ?>">
-                <h3><?php echo esc_html(get_the_title()); ?></h3>
-                <p><?php echo esc_html(get_the_excerpt()); ?></p>
+        <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-text-center simplecharm-content"); ?>>
+        <p class="simplecharm-post-category"><?php echo wp_kses_post(get_the_category_list(', ')); ?></p>
+        <div class="post-meta">
+                <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
+                <span class="post-author"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
+            </div>
+                <h3 class="simplecharm-home-post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></h3>
             </a>
+            <p class="simplecharm-home-excerpt"><?php echo apply_filters('the_excerpt', get_the_excerpt()); ?></p>
         </div>
         <?php
     endwhile;
 else :
     ?>
-    <p class="kmfsc-text-center">No posts found</p>
+    <p class="simplecharm-text-center"><?php esc_html_e('No posts found.', 'simplecharm'); ?></p>
     <?php
 endif;
 the_posts_pagination(array(
@@ -43,7 +47,7 @@ wp_reset_postdata();
 ?>
 </div>
 <div>
-<?php get_sidebar("kmfsc_home_sidebar"); ?>
+<?php get_sidebar("simplecharm_home_sidebar"); ?>
 </div>
 </div>
 

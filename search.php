@@ -8,7 +8,7 @@ get_header();
 if (have_posts()) :
     while (have_posts()) : the_post();
         ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class("kmfsc-text-center kmfsc-content"); ?>>
+        <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-text-center simplecharm-content"); ?>>
             <h1 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h1>
             <div class="post-meta">
                 <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
@@ -21,7 +21,8 @@ if (have_posts()) :
     the_posts_navigation();
 else:
     ?>
-    <p class="kmfsc-text-center">No search results found for "<?php echo esc_html(get_search_query()); ?>"</p>
+   <p class="simplecharm-text-center"><?php echo esc_html( sprintf( __( 'No search results found for "%s"', 'simplecharm' ), get_search_query() ) ); ?></p>
+
     <?php
 endif;
 

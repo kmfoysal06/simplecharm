@@ -5,47 +5,61 @@ if(!defined('ABSPATH')) {
 ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<?php wp_body_open(); ?>
-	<a class="skip-link screen-reader-text" href="#kmfsc-content">
+	<?php 
+        if ( function_exists( 'wp_body_open' ) ) {
+            wp_body_open();
+        }else { 
+            do_action( 'wp_body_open' ); 
+        }
+    ?>
+	<a class="skip-link screen-reader-text" href="#simplecharm-content">
 	<?php _e( 'Skip to content', 'simplecharm' ); ?></a>
-    <header class="kmfsc-text-center" role="banner">
-    <div class="kmfsc-header">
-	<div class="kmfsc-header-contents">   
+    <header class="simplecharm-text-center" role="banner">
+    <div class="simplecharm-header">
+	<div class="simplecharm-header-contents">   
 			<span>
-              <!-- get blog title if custom logo  is not set  -->
                 <?php
                 if(has_custom_logo()){
                     the_custom_logo();
-                }else{
+                }
                     ?>
-                    <h1 class="kmfsc-model-link kmf-model-shadow"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                <?php if(display_header_text()){
+                    ?>
+                    <h1 class="simplecharm-site-title simplecharm-model-shadow simplecharm-model-link">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                            <?php bloginfo('name'); ?>
+                        </a>
+                    </h1>
+                    <p class="simplecharm-site-description">
+                        <?php bloginfo('description'); ?>
+                    </p>
                     <?php
                 }
                 ?>
             </span>
-            <nav role="navigation" class="kmfsc-main-navigation">
+            <nav role="navigation" class="simplecharm-main-navigation">
                 <?php
-                if(has_nav_menu( "kmfsc_header" )){
+                if(has_nav_menu( "simplecharm_header" )){
                     wp_nav_menu( [
-                        'theme_location' => 'kmfsc_header',
+                        'theme_location' => 'simplecharm_header',
                     ] );
                 }
                 ?>
                 <span><?php get_search_form(); ?></span>
             </nav>
         </div>
-        <div class="kmfsc-header-image">
+        <div class="simplecharm-header-image">
         <img alt="header-image" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
         </div>
     </div>
     </header>
     <br>
     <br>
-    <main role="main" id="kmfsc-content" tabindex="-1">
+    <main role="main" id="simplecharm-content" tabindex="-1">

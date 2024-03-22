@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 get_header();
 
 if (have_posts()) : ?>
-    <div class="kmfsc-single-container">
+    <div class="simplecharm-single-container">
     <div>
     <?php
     while (have_posts()) : the_post();
@@ -15,12 +15,12 @@ if (have_posts()) : ?>
             return;
         }else{
             ?>
-            <div id="post-<?php the_ID(); ?>" <?php post_class("kmfsc-post"); ?>>
-            <h1 class="post-title kmfsc-text-center"><?php echo apply_filters('the_title', sanitize_text_field(get_the_title())); ?></h1>
-            <p class="kmfsc-text-center"><?php the_post_thumbnail('medium'); ?></p>
+            <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-post"); ?>>
+            <h1 class="post-title simplecharm-text-center"><?php echo apply_filters('the_title', sanitize_text_field(get_the_title())); ?></h1>
+            <p class="simplecharm-text-center"><?php the_post_thumbnail('medium'); ?></p>
             <div class="post-meta">
                 <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
-                <span class="post-author kmfsc-model-link"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
+                <span class="post-author simplecharm-model-link"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
             </div>
             <div class="post-content"><?php echo apply_filters('the_content', wp_kses_post(get_the_content())); ?></div>
             <?php 
@@ -47,12 +47,12 @@ if (have_posts()) : ?>
 		?>
         </div>
     <div>
-        <?php get_sidebar("kmfsc_post_sidebar"); ?>
+        <?php get_sidebar("simplecharm_post_sidebar"); ?>
     </div>
     <?php
 else:
     ?>
-    <p class="kmfsc-text-center">No posts found</p>
+    <p class="simplecharm-text-center"><?php esc_html_e('No posts found.', 'simplecharm'); ?></p>
     <?php
 endif;
 get_footer();
