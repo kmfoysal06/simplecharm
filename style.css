@@ -188,7 +188,9 @@ a img.aligncenter {
     width: auto;
     z-index: 100000;
 }
-
+.post-meta a{
+	color:#005882;
+}
 /* Utility Classes and Others */
 .simplecharm-text-center {
     text-align: center;
@@ -213,7 +215,7 @@ a img.aligncenter {
 .simplecharm-main-navigation a,
 .simplecharm-edit-profile-btn a,
 .simplecharm-model-link p {
-    color: #0093d0;
+    color: #005e86;
 }
 .simplecharm-content p{
     margin: 10px 0;
@@ -222,14 +224,14 @@ a img.aligncenter {
 .simplecharm-content a:visited,
 .simplecharm-main-navigation a:visited,
 .simplecharm-edit-profile-btn a:visited {
-    color: #0073aa;
+    color: #005e8b;
 }
 
 
 .simplecharm-content a,
 .simplecharm-main-navigation a,
 .simplecharm-edit-profile-btn a {
-    color: #0073aa;
+    color: #005e8b;
     text-decoration: none;
 }
 
@@ -249,14 +251,13 @@ a img.aligncenter {
 .simplecharm-content a:hover,
 .simplecharm-main-navigation a:hover,
 .simplecharm-edit-profile-btn a:hover {
-    color: #0093d0;
+    color: #005e86;
 }
 
 
 /* styling header the nav menu */
 .simplecharm-site-description {
-    color: #000;
-    text-shadow: 2px 1px 0px #fff;
+    color: #75a42d;
     font-size: 1.2em;
     letter-spacing: 5px;
     padding: 5px 10px;
@@ -268,6 +269,8 @@ nav.simplecharm-main-navigation ul {
     position: relative;
     background: rgba(255,255,255,0.4);
     margin:0 0 5px 0;
+    transition:all 0.4s;
+    transition-delay:0.2s;
 }
 nav.simplecharm-main-navigation ul .sub-menu {
     display: flex;
@@ -288,12 +291,15 @@ nav.simplecharm-main-navigation ul .sub-menu {
     width: 100%;
     left: 0;
     z-index: 12;
-    display:none;
+    display:flex;
+    opacity:0;
+    pointer-events:none;
 }
 
 nav.simplecharm-main-navigation ul li:hover .sub-menu,
 nav.simplecharm-main-navigation ul li:focus-within .sub-menu {
-    display:flex;
+    opacity:1;
+    pointer-events:auto;
 }
 nav.simplecharm-main-navigation ul li a:hover,
 nav.simplecharm-main-navigation ul li a:hover{
@@ -304,6 +310,9 @@ nav.simplecharm-main-navigation ul li a:hover{
 /*styling single.php page and home page*/
 .simplecharm-home-post-title a{
     text-decoration: none;
+}
+.simplecharm-post-category a{
+	color:#005882;
 }
 .simplecharm-post-category{
     display: block;
@@ -343,6 +352,7 @@ nav.simplecharm-main-navigation ul li a:hover{
     width: calc(100% - 15px);
     padding: 10px;
     position: relative;
+    color:#32373c;
 }
 #simplecharm-homepage-sidebar, #simplecharm-postpage-sidebar {
     display:flex;
@@ -468,8 +478,11 @@ nav.navigation.pagination a {
     background: #808080;
     padding: 20px 0; 
     text-align: center;
+    color:#000;
 }
-
+.simplecharm-theme-footer  a{
+	color:#021141
+}
 /*styling the search bar*/
 .search-field, .search-submit {
     border: none;
