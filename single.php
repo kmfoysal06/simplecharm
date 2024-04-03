@@ -2,6 +2,7 @@
 /**
  *  Single Post Page Template
  * @package SimpleCharm
+ * @since 1.0
  *  */
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
@@ -10,21 +11,23 @@ if (!defined('ABSPATH')) {
 get_header();
 
 if (have_posts()) : ?>
-    <div class="simplecharm-single-container">
+<div class="simplecharm-single-container">
     <div>
-    <?php
+        <?php
     while (have_posts()) : the_post();
         if(post_password_required()){
             echo get_the_password_form();
             return;
         }else{
             ?>
-            <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-post"); ?>>
-            <h1 class="post-title simplecharm-text-center"><?php echo apply_filters('the_title', sanitize_text_field(get_the_title())); ?></h1>
+        <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-post"); ?>>
+            <h1 class="post-title simplecharm-text-center">
+                <?php echo apply_filters('the_title', sanitize_text_field(get_the_title())); ?></h1>
             <p class="simplecharm-text-center"><?php the_post_thumbnail('medium'); ?></p>
             <div class="post-meta">
                 <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
-                <span class="post-author simplecharm-model-link"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
+                <span class="post-author simplecharm-model-link"><a
+                        href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
             </div>
             <div class="post-content"><?php echo apply_filters('the_content', wp_kses_post(get_the_content())); ?></div>
             <?php 
@@ -40,16 +43,16 @@ if (have_posts()) : ?>
             <br>
             category : <?php echo wp_kses_post(get_the_category_list(', ')); ?>
         </div>
-       <?php } ?>
+        <?php } ?>
         <br>
         <div class="comment-respond wp-block-post-comments-form">
-        <?php
+            <?php
         comments_template();?>
         </div>
         <?php
         endwhile; 
 		?>
-        </div>
+    </div>
     <div>
         <?php get_sidebar("simplecharm_post_sidebar"); ?>
     </div>

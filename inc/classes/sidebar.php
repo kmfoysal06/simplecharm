@@ -2,6 +2,7 @@
 /**
  * Register Sidebar and Load Sidebar Related Codes
  * @package SimpleCharm
+ * @since 1.3
  */
 namespace SIMPLECHARM_THEME\Inc\Classes; 
 use SIMPLECHARM_THEME\Inc\Traits\Singletone;

@@ -3,6 +3,8 @@
  * this, set your custom settings to 'postMessage' and then add your handling
  * here. Your javascript should grab settings from customizer controls, and 
  * then make any necessary changes to the page using jQuery.
+ * @package SimpleCharm
+ * @since 1.0
  */
 ( function( $ ) {
 		function simplecharm_isValidURL(url) {

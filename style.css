@@ -310,7 +310,7 @@ nav.simplecharm-main-navigation ul li:focus-within .sub-menu {
     pointer-events:auto;
 }
 nav.simplecharm-main-navigation ul li a:hover,
-nav.simplecharm-main-navigation ul li a:hover{
+nav.simplecharm-main-navigation ul li a:focus{
     text-decoration: underline;
 }
 
@@ -412,7 +412,8 @@ nav.navigation.pagination a {
 .simplecharm-main-navigation a{
     transition: all 0.3s;
 }
-.simplecharm-main-navigation a:hover {
+.simplecharm-main-navigation a:hover,
+.simplecharm-main-navigation a:focus {
     background: #000;
 }
 /*search page navigation*/

@@ -2,6 +2,7 @@
 /**
  * Enqueue All Assets
  * @package SimpleCharm
+ * @since 1.3
  */
 namespace SIMPLECHARM_THEME\Inc\Classes; 
 use SIMPLECHARM_THEME\Inc\Traits\Singletone;
@@ -15,21 +16,17 @@ class Assets{
         /**
          * Actions.
          */
-        add_action("wp_enqueue_scripts",[$this,"register_scripts"]);
         add_action("wp_enqueue_scripts",[$this,"register_styles"]);
     }
 
     public function register_styles(){
-    //register style
-    wp_register_style('simplecharm-style', get_stylesheet_uri(), array(), '1.0.0', 'all');
-
-
-    // Enqueue styles
+    /**
+     * Register Main Style
+     */
+    wp_register_style('simplecharm-style', get_stylesheet_uri(), array(), filemtime(SIMPLECHARM_DIR_PATH.'/style.css'), 'all');
+    /**
+     * Enqueue Main Style
+     */
     wp_enqueue_style('simplecharm-style');
-    }
-
-    public function register_scripts(){
-        //register script
-        
     }
 }
