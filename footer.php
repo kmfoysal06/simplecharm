@@ -1,4 +1,8 @@
 <?php
+/**
+ *  Footer Template
+ * @package SimpleCharm
+ *  */
 if(!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }

@@ -1,4 +1,8 @@
 <?php
+/**
+ *  Home Page Sidebar
+ * @package SimpleCharm
+ *  */
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }

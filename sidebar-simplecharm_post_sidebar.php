@@ -1,4 +1,8 @@
 <?php
+/**
+ *  Post Page Sidebar Template
+ * @package SimpleCharm
+ *  */
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
