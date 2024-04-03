@@ -1,4 +1,9 @@
 <?php
+/**
+ *  Author Page Template
+ * @package SimpleCharm
+ * @since 1.0
+ *  */
 if(!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
@@ -16,21 +21,22 @@ if (have_posts()) :
     echo '<div class="simplecharm-post">';
     while (have_posts()) : the_post();
         ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-content"); ?>>
-            <h3 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
-            <div class="post-meta">
-                <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
-            </div>
-            <div class="post-content"><?php echo esc_html(get_the_excerpt()); ?></div>
-        </div>
-        <?php
+<div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-content"); ?>>
+    <h3 class="post-title"><a
+            href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
+    <div class="post-meta">
+        <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
+    </div>
+    <div class="post-content"><?php echo esc_html(get_the_excerpt()); ?></div>
+</div>
+<?php
     endwhile;
     the_posts_navigation();
     echo '</div>';
 else:
     ?>
-    <p class="simplecharm-text-center"><?php esc_html_e('No posts by this author.', 'simplecharm'); ?></p>
-    <?php
+<p class="simplecharm-text-center"><?php esc_html_e('No posts by this author.', 'simplecharm'); ?></p>
+<?php
 endif;
 
 get_footer();
