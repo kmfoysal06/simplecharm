@@ -33,3 +33,7 @@ This theme features carefully crafted CSS elements that ensure all components ar
 Customization options are streamlined to maintain the theme's minimalist aesthetic while still allowing for personalization. You can easily tailor the background and foreground colors to reflect your brand or personal style, creating a cohesive and polished look across your site.
 
 SimpleCharm is ideal for bloggers, writers, creatives, and businesses seeking a sleek and uncomplicated WordPress theme that emphasizes content above all else. With its intuitive design and focus on clarity, SimpleCharm Blog empowers you to share your message with clarity and elegance.
+
+== Changelog ==
+
+Changes can be found in [the changelog.txt file](https://github.com/kmfoysal06/simplecharm/blob/master/changelog.txt).
