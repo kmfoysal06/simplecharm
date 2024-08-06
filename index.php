@@ -32,8 +32,17 @@ if ($query->have_posts()) :
             </div>
             <h3 class="simplecharm-home-post-title"><a
                     href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></h3>
-            </a>
+                    </a>
             <p class="simplecharm-home-excerpt"><?php echo apply_filters('the_excerpt', get_the_excerpt()); ?></p>
+                    <a href="<?php the_permalink(); ?>">
+            <?php
+            echo sprintf(
+                __( 'Continue reading%s', 'textdomain' ),
+                '<span class="screen-reader-text"> ' . get_the_title() . '</span>'
+            );
+            ?>
+        </a>
+
         </div>
         <?php
     endwhile;

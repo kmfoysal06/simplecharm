@@ -3,8 +3,8 @@
  Author: kmfoysal06
  Author URI: http://profiles.wordpress.org/kmfoysal06
  Description: "SimpleCharm" is a clean and minimalist WordPress theme designed for those who appreciate simplicity and elegance in their online presence. With its uncluttered layout and understated design, SimpleCharm lets your content take center stage without distraction.
- Requires at least: 5.0
- Tested up to: 6.5
+ Requires at least: 5.5
+ Tested up to: 6.6
  Requires PHP: 7.4
  Version: 1.3
  License: GNU General Public License v2 or later
@@ -232,7 +232,7 @@ code{
 .simplecharm-content a:visited,
 .simplecharm-main-navigation a:visited,
 .simplecharm-edit-profile-btn a:visited {
-    color: #005e8b;
+    color: #005881;
 }
 
 
@@ -262,6 +262,15 @@ code{
     color: #005e86;
 }
 
+.simplecharm-flex{
+    display: flex;
+}
+.simplecharm-m-auto{
+    margin: auto;
+}
+.simplecharm-justify-center{
+    justify-content: center;
+}
 
 /* styling header the nav menu */
 .simplecharm-site-description {

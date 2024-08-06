@@ -1,3 +1,6 @@
+= 1.2 =
+* first release
+
 = 1.3 =
 * Updated Everything With OOP
 * Improved Style For keyboard Navigation
@@ -6,5 +9,5 @@
 * Incremented version number of all scripts and styles with filemtime() for cache busting
 * Improved Accessibility
 
-= 1.2 =
-* first release
+= 1.4 =
+* Improved Accessibility

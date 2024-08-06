@@ -42,6 +42,7 @@ class SimpleCharm_Theme{
             'caption',
             'style',
             'script',
+            'navigation-widgets'
         ));
         add_theme_support('custom-header', array(
             'flex-width'    => true,
