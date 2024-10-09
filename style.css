@@ -502,10 +502,13 @@ nav.navigation.pagination a {
 	color:#021141
 }
 /*styling the search bar*/
+.search-form{
+    display: flex;
+    gap: 10px;
+}
 .search-field, .search-submit {
     border: none;
     padding: 10px;
-    border-radius: 10px;
     text-align: center;
 }
 .search-field{
@@ -521,29 +524,4 @@ nav.navigation.pagination a {
 }
 #simplecharm-content[tabindex="-1"]:focus , #comments[tabindex="-1"]:focus {
   outline: 0;
-}
-
-/*select2 styles*/
-form.search-form {
-    display: grid;
-    gap: 10px;
-    align-items: center;
-    grid-template-areas: "search-field category category submit-field";
-}
-.search-field-container{
-    grid-area: search-field;
-}
-.select2-selection, .select2-container, .select2-container .selction, .select2-selection--multiple, .search-categories{
-    width: 100%;
-}
-.submit-button-container{
-    grid-area: submit-field;
-}
-.choices__list--multiple .choices__item {
-  display: none;
-}
-
-/* Style the dropdown to make checkboxes visible */
-.choices__list--dropdown .choices__item {
-  padding-left: 20px;
 }
