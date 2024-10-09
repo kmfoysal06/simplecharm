@@ -9,7 +9,9 @@ if (!defined('ABSPATH')) {
 }
 
 get_header();
-
+?>
+<div id="simplecharm-search-page">
+<?php
 if (have_posts()) :
     while (have_posts()) : the_post();
         ?>
@@ -34,6 +36,10 @@ else:
 
 <?php
 endif;
-
-get_footer();
 ?>
+</div>
+<div id="simplecharm-loading-overlay">
+    <div class="loader"></div>
+</div>
+<?php
+get_footer();

@@ -502,14 +502,21 @@ nav.navigation.pagination a {
 	color:#021141
 }
 /*styling the search bar*/
+.search-form{
+    display: flex;
+    gap: 10px;
+}
 .search-field, .search-submit {
     border: none;
     padding: 10px;
-    border-radius: 10px;
     text-align: center;
+}
+.search-field{
+    height:50px;
 }
 .search-submit{
 	cursor:pointer;
+    display: block;
 }
 .search-field:focus{
 	border:none;
