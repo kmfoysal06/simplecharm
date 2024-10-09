@@ -41,5 +41,6 @@ endif;
 <div id="simplecharm-loading-overlay">
     <div class="loader"></div>
 </div>
+<div class="simplecharm-searchpage-pagination"></div>
 <?php
 get_footer();

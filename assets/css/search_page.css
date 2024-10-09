@@ -99,3 +99,27 @@ form.search-form {
         transform:rotate(360deg);
     }
 }
+
+/*Pagination Style*/
+.simplecharm-searchpage-pagination{
+    padding:20px;
+    width:100%;
+    text-align:center;
+}
+.simplecharm-searchpage-pagination a {
+    padding:10px;
+    border:1px solid #000;
+    margin:10px;
+    text-decoration:none;
+}
+.simplecharm-searchpage-pagination a:hover{
+    background:rgba(0,0,0,0.3);
+}
+.simplecharm-searchpage-pagination a.active{
+    background:#000;
+    color:#fff;
+}
+.simplecharm-searchpage-pagination a.active:hover{
+    opacity: 0.8;
+    pointer-events: none;
+}
