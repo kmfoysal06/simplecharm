@@ -62,11 +62,14 @@ if(!defined('ABSPATH')) {
                     <span><?php get_search_form(); ?></span>
                 </nav>
             </div>
-            <div class="simplecharm-header-image">
-                <img alt="header-image" src="<?php header_image(); ?>"
-                    width="<?php echo absint( get_custom_header()->width ); ?>"
-                    height="<?php echo absint( get_custom_header()->height ); ?>">
-            </div>
+            
+            <?php if(has_header_image()): ?>
+                <div class="simplecharm-header-image">
+                    <img alt="header-image" src="<?php header_image(); ?>"
+                        width="<?php echo absint( get_custom_header()->width ); ?>"
+                        height="<?php echo absint( get_custom_header()->height ); ?>">
+                </div>
+            <?php endif; ?>
         </div>
     </header>
     <br>

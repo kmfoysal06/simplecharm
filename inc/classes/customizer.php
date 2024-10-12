@@ -49,7 +49,7 @@ class Customizer{
      */
     public function customizer_live_preview() {
     //register script
-    wp_register_script('simplecharm-customizer', SIMPLECHARM_DIR_URI . '/assets/js/simplecharm_customize.js', array('jquery', 'customize-preview'),filemtime(SIMPLECHARM_DIR_PATH . '/assets/js/simplecharm_customize.js'), true);
+    wp_register_script('simplecharm-customizer', SIMPLECHARM_DIR_URI . '/assets/js/customizer.js', array('jquery', 'customize-preview'),filemtime(SIMPLECHARM_DIR_PATH . '/assets/js/simplecharm_customize.js'), true);
     //sending header image as to the js file
     $header_image_url = get_header_image();
     if (filter_var($header_image_url, FILTER_VALIDATE_URL)) {

@@ -1,0 +1,31 @@
+/*search page navigation*/
+.posts-navigation .nav-links{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.posts-navigation .nav-links a {
+    color: currentColor;
+}
+/*styling the search bar*/
+.search-form{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.search-field, .search-submit {
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+.search-field{
+    height:50px;
+}
+.search-submit{
+	cursor:pointer;
+    display: block;
+}
+.search-field:focus{
+	border:none;
+	outline:none;
+}

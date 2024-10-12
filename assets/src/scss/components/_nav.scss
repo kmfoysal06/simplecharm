@@ -1,0 +1,50 @@
+/* styling header the nav menu */
+.simplecharm-site-description {
+    color: #75a42d;
+    font-size: 1.2em;
+    letter-spacing: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin:5px 0;
+}
+nav.simplecharm-main-navigation ul {
+    list-style: none;
+    position: relative;
+    background: rgba(255,255,255,0.4);
+    margin:0 0 5px 0;
+    transition:all 0.4s;
+    transition-delay:0.2s;
+}
+nav.simplecharm-main-navigation ul .sub-menu {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 25%;
+}
+nav.simplecharm-main-navigation ul li {
+    display: inline-block;
+    margin: 10px;
+}
+nav.simplecharm-main-navigation ul li a{
+	padding:10px;
+}
+
+nav.simplecharm-main-navigation ul .sub-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 12;
+    display:flex;
+    opacity:0;
+    pointer-events:none;
+}
+
+nav.simplecharm-main-navigation ul li:hover .sub-menu,
+nav.simplecharm-main-navigation ul li:focus-within .sub-menu {
+    opacity:1;
+    pointer-events:auto;
+}
+nav.simplecharm-main-navigation ul li a:hover,
+nav.simplecharm-main-navigation ul li a:focus{
+    text-decoration: underline;
+}

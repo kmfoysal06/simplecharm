@@ -1,0 +1,13 @@
+/*edit profile link / button*/
+.simplecharm-edit-profile-btn{
+	display:block;
+}
+.simplecharm-edit-profile-btn a{
+	border:1px solid currentColor;
+	padding:5px 10px;
+	margin:auto
+}
+.simplecharm-edit-profile-btn a:hover,
+.simplecharm-edit-profile-btn a:focus{
+	text-decoration:underline!important;
+}

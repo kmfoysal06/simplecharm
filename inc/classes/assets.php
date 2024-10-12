@@ -25,28 +25,28 @@ class Assets{
      * Register Main Style
      */
     wp_register_style('simplecharm-style', get_stylesheet_uri(), array(), filemtime(SIMPLECHARM_DIR_PATH.'/style.css'), 'all');
-    wp_register_style('simplecharm-searchpage-style', SIMPLECHARM_DIR_URI . '/assets/css/search_page.css', array(), filemtime(SIMPLECHARM_DIR_PATH . '/assets/css/search_page.css'), 'all');
+    wp_register_style('simplecharm-compiled-style', SIMPLECHARM_DIR_URI . '/assets/build/css/main.css', array(), filemtime(SIMPLECHARM_DIR_PATH . '/assets/build/css/main.css'), 'all');
+    wp_register_style('simplecharm-searchpage-style', SIMPLECHARM_DIR_URI . '/assets/build/css/search.css', array(), filemtime(SIMPLECHARM_DIR_PATH . '/assets/build/css/search.css'), 'all');
     /**
      * Enqueue Styles
      */
     wp_enqueue_style('simplecharm-style');
+    wp_enqueue_style('simplecharm-compiled-style');
     if(is_search()){
         wp_enqueue_style('simplecharm-searchpage-style');
     }
 }
     public function register_scripts(){
     /**
-     * Register Select2 Script
+     * Register Search Functionality Script
      */
-    wp_register_script('simplecharm-multiselect-dropdown', SIMPLECHARM_DIR_URI . '/assets/js/multiselect.js', array(), filemtime(SIMPLECHARM_DIR_PATH . '/assets/js/multiselect.js'), true);
-    wp_register_script('simplecharm_load_search_results', SIMPLECHARM_DIR_URI . '/assets/js/load_search.js', array(), filemtime(SIMPLECHARM_DIR_PATH . '/assets/js/load_search.js'), true);
+    wp_register_script('simplecharm-search-functionalities', SIMPLECHARM_DIR_URI . '/assets/build/js/search.js', array('jquery'), filemtime(SIMPLECHARM_DIR_PATH . '/assets/build/js/search.js'), true);
     
     /**
-     * Enqueue Scripts and Insert Additional Data if Needed
+     * Enqueue Scripts
      */
         if(is_search()){
-            wp_enqueue_script('simplecharm-multiselect-dropdown');
-            wp_enqueue_script("simplecharm_load_search_results");
+            wp_enqueue_script('simplecharm-search-functionalities');
         }
 
 

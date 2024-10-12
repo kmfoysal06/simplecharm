@@ -1,0 +1,26 @@
+/*styling single.php page and home page*/
+.simplecharm-home-post-title a{
+    text-decoration: none;
+}
+.simplecharm-post-category a{
+	color:#005882;
+}
+.simplecharm-post-category{
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+}
+.simplecharm-single-container, .simplecharm-posts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+}
+.post-author{
+	text-decoration:underline;
+}
+.simplecharm-single-container div:nth-child(1), .simplecharm-post-container{
+    grid-column: 1 / 3;
+}

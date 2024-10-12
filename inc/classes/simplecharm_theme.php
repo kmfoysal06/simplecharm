@@ -50,7 +50,7 @@ class SimpleCharm_Theme{
             'width'         => 980,
             'flex-height'   => true,
             'height'        => 200,
-            'default-image' => SIMPLECHARM_DIR_URI . '/assets/images/simplecharm-header-image.jpg',
+            'default-image' => SIMPLECHARM_DIR_URI . '/assets/build/img/simplecharm-header-image.jpg',
             'uploads'       => true,
         ));
         add_theme_support('custom-logo', array(

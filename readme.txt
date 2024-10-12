@@ -34,6 +34,14 @@ Customization options are streamlined to maintain the theme's minimalist aesthet
 
 SimpleCharm is ideal for bloggers, writers, creatives, and businesses seeking a sleek and uncomplicated WordPress theme that emphasizes content above all else. With its intuitive design and focus on clarity, SimpleCharm Blog empowers you to share your message with clarity and elegance.
 
+== FAQ ==
+
+= Why There is No Category Listed in Search Page Multiselect Dropdown and Why The Search Functionality in Search Page Not Working =
+
+Answer: In Most of The Cases it Solved by Configure Permalink Setting in Dashboard->Settings->Permalinks and Change it From Plain Text to Any Other Option and if Its Not Working Then You Might Not Have .htaccess File Generated in That Case You Have to Manually Create a .htaccess File in Your WordPress Installation Root Directory and Paste The Contents Provided at The Bottom of The Permalink Setting Page After Changing the Permalink Structure from Plain to Any.If You Didn't Understand or Its Not Working Feel Free to [Create a Issue](https://wordpress.org/support/theme/simplecharm/)
+
+
+
 == Changelog ==
 
 Changes can be found in [the changelog.txt file](https://github.com/kmfoysal06/simplecharm/blob/master/changelog.txt).
