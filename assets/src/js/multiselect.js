@@ -13,20 +13,29 @@
       const list = $('.simplecharm-select-options li');
 
       list.each(function(){
-        this.addEventListener('click',function(e){
-          let checked = this.querySelector('input');
+        $(this).on( 'click', (e) => {
           e.preventDefault();
-          checked.checked = !checked.checked;
-          checked.checked ? checked.classList.add("selected"): checked.classList.remove("selected");
-         $(`#${this.className}`).selected = checked.checked;
+          let checked = $(this).find('input')[0]; // Get the input element in the clicked li
+            checked.checked = !checked.checked; // Toggle checked state
 
+            if (checked.checked) {
+              $(checked).addClass("selected");
+            } else {
+              $(checked).removeClass("selected");
+            }
+          
+          const option = $(`#${this.className}`); // Get the option corresponding to the clicked li
+            option.prop('selected', checked.checked); // Set selected property correctly
+
+
+         $(`#${this.className}`).selected = checked.checked;
           const selectedStatus = $(".simplecharm-select-form p b");
           const selectedCount = $(".selected");
 
           if(selectedCount.length){
-            selectedStatus.innerText = `${selectedCount.length} Categories Selected`;
+            selectedStatus.text(`${selectedCount.length} Category Selected`);
           }else{
-            selectedStatus.innerText = `Select Categories`;  
+            selectedStatus.text(`Select Categories`);  
           }
         });
       })
