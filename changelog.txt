@@ -10,4 +10,9 @@
 * Improved Accessibility
 
 = 1.4 =
+* Added Search Filter for Category on Search Page
 * Improved Accessibility
+* Improved Performance
+
+= 1.4.1 =
+* Hotfix: Fixed Some Security and Other Issues Based on WordPress Theme Requirements

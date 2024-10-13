@@ -19,7 +19,7 @@ class Users{
 
     public function list_users(){
         if (isset($_POST['user_id'])) {
-            $user_id = intval($_POST['user_id']);
+            $user_id = intval(sanitize_text_field($_POST['user_id']));
 
             $user_info = get_userdata($user_id);
 

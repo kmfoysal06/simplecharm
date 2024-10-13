@@ -37,7 +37,7 @@ if ($query->have_posts()) :
                     <a href="<?php the_permalink(); ?>">
             <?php
             echo sprintf(
-                __( 'Continue reading%s', 'textdomain' ),
+                __( 'Continue reading%s', 'simplecharm' ),
                 '<span class="screen-reader-text"> ' . get_the_title() . '</span>'
             );
             ?>

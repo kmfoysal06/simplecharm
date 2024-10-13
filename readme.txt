@@ -3,7 +3,7 @@ Contributors: kmfoysal06
 Requires at least: 5.5
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.4
+Stable tag: 1.4.1
 Text Domain: simplecharm
 Author URI: http://profiles.wordpress.org/kmfoysal06
 License: GPLv2 or later
@@ -40,8 +40,9 @@ SimpleCharm is ideal for bloggers, writers, creatives, and businesses seeking a 
 
 Answer: In Most of The Cases it Solved by Configure Permalink Setting in Dashboard->Settings->Permalinks and Change it From Plain Text to Any Other Option and if Its Not Working Then You Might Not Have .htaccess File Generated in That Case You Have to Manually Create a .htaccess File in Your WordPress Installation Root Directory and Paste The Contents Provided at The Bottom of The Permalink Setting Page After Changing the Permalink Structure from Plain to Any.If You Didn't Understand or Its Not Working Feel Free to [Create a Issue](https://wordpress.org/support/theme/simplecharm/)
 
-
-
 == Changelog ==
 
 Changes can be found in [the changelog.txt file](https://github.com/kmfoysal06/simplecharm/blob/master/changelog.txt).
+
+== Uncompiled Assets ==
+The Uncompiled Assetes and The Configuration Files Will Be Found [Here](https://github.com/kmfoysal06/simplecharm/tree/master/assets)
