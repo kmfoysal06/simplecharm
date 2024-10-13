@@ -17,6 +17,7 @@ class SimpleCharm_Theme{
         Sidebar::get_instance();
         Customizer::get_instance();
         Search::get_instance();
+        Users::get_instance();
         $this->setup_hooks();
     }
 

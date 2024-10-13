@@ -47,6 +47,9 @@ class Assets{
      */
         if(is_search()){
             wp_enqueue_script('simplecharm-search-functionalities');
+            wp_localize_script('simplecharm-search-functionalities', 'admin_data', array(
+                'ajax_url' => admin_url('admin-ajax.php')
+            ));
         }
 
 
