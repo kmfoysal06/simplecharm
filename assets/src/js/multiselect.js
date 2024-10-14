@@ -15,8 +15,8 @@
       list.each(function(){
         $(this).on( 'click', (e) => {
           e.preventDefault();
-          let checked = $(this).find('input')[0]; // Get the input element in the clicked li
-            checked.checked = !checked.checked; // Toggle checked state
+          let checked = $(this).find('input')[0];
+            checked.checked = !checked.checked;
 
             if (checked.checked) {
               $(checked).addClass("selected");
@@ -24,8 +24,8 @@
               $(checked).removeClass("selected");
             }
           
-          const option = $(`#${this.className}`); // Get the option corresponding to the clicked li
-            option.prop('selected', checked.checked); // Set selected property correctly
+          const option = $(`#${this.className}`);
+            option.prop('selected', checked.checked);
 
 
          $(`#${this.className}`).selected = checked.checked;

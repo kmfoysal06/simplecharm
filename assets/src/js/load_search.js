@@ -4,6 +4,7 @@
             this.init();
             this.page = 1;
             this.allUsers = [];
+            this.totalPage = 1;
         }
         init(){
             this.load_posts();
@@ -34,8 +35,6 @@
             let pagination = $('.simplecharm-searchpage-pagination');
                 pagination.html('');
 
-            let totalPage = 1;
-
             let apiUrl = new URL('/wp-json/wp/v2/posts', window.location.origin);
             let params = new URLSearchParams();
 
@@ -54,15 +53,18 @@
             $('#simplecharm-loading-overlay').show();
 
             try{
-            let response = await fetch(apiUrl + '?' + params.toString());
-            let posts = await response.json();
             let resultsContainer = $('#simplecharm-search-page');
-            resultsContainer.html(''); // Clear previous results
-            // .then(response => {
-            //     totalPage = response.headers.get('X-WP-TotalPages');
-            //     return response.json()
-            // })
-                // Check if there are posts
+            resultsContainer.html('');
+            let response = await fetch(apiUrl + '?' + params.toString());
+            this.totalPage = await response.headers.get('X-Wp-Totalpages');
+            let posts = await response.json();
+
+            if(posts.code === 'rest_post_invalid_page_number'){
+                /**
+                 * This Conditional is For Loading Posts From Page 1 if There Is No Page as The Provided page Variable
+                 */
+                this.requestPosts(e,search_term,categories,1);
+            }else{
                 if (posts.length > 0) {
                     for(let post of posts) {
                         let date = new Date(post.date);
@@ -94,10 +96,10 @@
             resultsContainer.append(postElement);
             
                     }
-                    if(totalPage > 1){
+                    if(this.totalPage > 1){
                         let pagination = $('.simplecharm-searchpage-pagination');
                         pagination.html('');
-                        for(let i = 1;i <= totalPage;i++){
+                        for(let i = 1;i <= this.totalPage;i++){
                             let pageBtn = document.createElement('a');
                             pageBtn.classList.add(i);
                             pageBtn.classList.add(page == i ? 'active' : 'inactive');
@@ -115,7 +117,8 @@
                 } else {
                     resultsContainer.innerHTML = `<p class="simplecharm-text-center">No search results found for "${search_term}"</p>`;
                 }
-                $('#simplecharm-loading-overlay').hide();
+                    $('#simplecharm-loading-overlay').hide();
+                }
             }catch(error){
                 console.error('Error fetching posts:', error);
                 document.getElementById('simplecharm-search-page').innerHTML = '<p>Error fetching posts.</p>';
