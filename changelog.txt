@@ -16,3 +16,6 @@
 
 = 1.4.1 =
 * Hotfix: Fixed Some Security and Other Issues Based on WordPress Theme Requirements
+
+= 1.4.2 =
+* Fix: Pagination Not Loading and Ajax Error For No Page Avilable Fixed.
