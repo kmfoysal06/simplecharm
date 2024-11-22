@@ -19,3 +19,7 @@
 
 = 1.4.2 =
 * Fix: Pagination Not Loading and Ajax Error For No Page Avilable Fixed.
+= 1.4.3 =
+* Fix: Loading Rest API Endpoint Dynamically in JS and PHP With WordPress Provided Function and HTML Line Generated on wp_head()
+* Fix: Search Page Category Select Box Closing on Search Button Clicked
+* UI: Improved UI of Search Section at Header

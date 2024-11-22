@@ -19,7 +19,9 @@ $categories = $args['cats'];
     <div class="simplecharm-select-options multiselect-closed multiselect-hide">
       <ul>
         <?php if(!empty($categories) && is_array($categories)):foreach($categories as $category):?>
-        <li class="<?php echo esc_attr($category['taxonomy'].''.$category['slug']); ?>"><?php echo $category['name']; ?> <input type="checkbox" class="select-checkbox"></li>
+        <li class="<?php echo esc_attr($category['taxonomy'].''.$category['slug']); ?>"><?php echo $category['name']; ?> <div>
+          <input type="checkbox" class="select-checkbox"><span></span>
+        </div></li>
         <?php endforeach;endif; ?>
       </ul>
     </div>

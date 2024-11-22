@@ -26,16 +26,25 @@
         load_posts(){
             $('#simplecharm-advanced-search-form').on('submit', (e) => {
             e.preventDefault();
+            let selectOptions = $(".simplecharm-select-options");
+            let selectDropdownIcon = $(".simplecharm-selectform-dropdown-icon");
             let search_term = $('.search-field').val();
             let categories = this.load_categories();
+
+            if(!selectOptions.hasClass("multiselect-closed")){
+                selectOptions.addClass("multiselect-closed");
+                selectDropdownIcon.removeClass("multiselect-open");
+                selectOptions.addClass("multiselect-hide");
+            }
             this.requestPosts(e,search_term,categories,this.page);
         });
         }
         async requestPosts(e,search_term,categories,page) {
+            let apiUrl;
             let pagination = $('.simplecharm-searchpage-pagination');
                 pagination.html('');
-
-            let apiUrl = new URL('/wp-json/wp/v2/posts', window.location.origin);
+            let endpoint = document.querySelector('link[rel="https://api.w.org/').href;
+                apiUrl = endpoint + "wp/v2/posts";
             let params = new URLSearchParams();
 
             if (search_term) {
@@ -55,7 +64,12 @@
             try{
             let resultsContainer = $('#simplecharm-search-page');
             resultsContainer.html('');
-            let response = await fetch(apiUrl + '?' + params.toString());
+            let response;
+            if(endpoint.endsWith("rest_route=/")){
+                response = await fetch(apiUrl + '&' + params.toString());
+            }else{
+                response = await fetch(apiUrl + '?' + params.toString());
+            }
             this.totalPage = await response.headers.get('X-Wp-Totalpages');
             let posts = await response.json();
 
@@ -115,7 +129,7 @@
                         pagination.html('');
                     }
                 } else {
-                    resultsContainer.innerHTML = `<p class="simplecharm-text-center">No search results found for "${search_term}"</p>`;
+                    resultsContainer[0].innerHTML = `<p class="simplecharm-text-center">No search results found for "${search_term}"</p>`;
                 }
                     $('#simplecharm-loading-overlay').hide();
                 }

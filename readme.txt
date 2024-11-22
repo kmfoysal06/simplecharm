@@ -3,7 +3,7 @@ Contributors: kmfoysal06
 Requires at least: 5.5
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 Text Domain: simplecharm
 Author URI: http://profiles.wordpress.org/kmfoysal06
 License: GPLv2 or later
@@ -38,7 +38,9 @@ SimpleCharm is ideal for bloggers, writers, creatives, and businesses seeking a 
 
 = Why There is No Category Listed in Search Page Multiselect Dropdown and Why The Search Functionality in Search Page Not Working =
 
-Answer: In Most of The Cases it Solved by Configure Permalink Setting in Dashboard->Settings->Permalinks and Change it From Plain Text to Any Other Option and if Its Not Working Then You Might Not Have .htaccess File Generated in That Case You Have to Manually Create a .htaccess File in Your WordPress Installation Root Directory and Paste The Contents Provided at The Bottom of The Permalink Setting Page After Changing the Permalink Structure from Plain to Any.If You Didn't Understand or Its Not Working Feel Free to [Create a Issue](https://wordpress.org/support/theme/simplecharm/)
+Answer: In Most of The Cases It Because of .htaccess File Not Generated. in That Case You Have to Manually Create a .htaccess File in Your WordPress Installation Root Directory and Paste The Contents Provided at The Bottom of The Permalink Setting Page After Changing the Permalink Structure from Plain to Any.
+
+Also When Permalink Setting is on Plain Text The Search Functionality Should Perfectly Work.If You Didn't Understand or Its Not Working Feel Free to [Create a Issue](https://wordpress.org/support/theme/simplecharm/)
 
 == Changelog ==
 
