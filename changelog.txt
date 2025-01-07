@@ -23,3 +23,6 @@
 * Fix: Loading Rest API Endpoint Dynamically in JS and PHP With WordPress Provided Function and HTML Line Generated on wp_head()
 * Fix: Search Page Category Select Box Closing on Search Button Clicked
 * UI: Improved UI of Search Section at Header
+
+= 1.4.5 =
+* Fix: Category Loading Fixed and Search Box Design Improved

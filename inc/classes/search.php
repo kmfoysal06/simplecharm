@@ -20,11 +20,9 @@ class Search{
         }else{
            $categories_api_url = get_rest_url() . 'wp/v2/categories?per_page=100';
         }
-        $response = wp_remote_get( esc_url($categories_api_url) );
-
-        if ( is_array( $response ) && ! is_wp_error( $response )) {
-            $body = wp_remote_retrieve_body( $response );
-            $categories = json_decode( $body, true );
+        $response = file_get_contents( esc_url($categories_api_url) );
+        if ( $response !== false) {
+            $categories = json_decode( $response, true );
             return $categories;
         }
     }
