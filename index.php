@@ -10,15 +10,20 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 <div class="simplecharm-posts-container">
+<?php if(is_category()): ?>
+<h2> <?php echo esc_html( sprintf( __( 'Category: %s', 'simplecharm' ), single_cat_title('', false) ) ); ?>
+</h2>
+<?php endif; ?>
     <div class="simplecharm-post-container">
         <?php
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 // Load posts on the home page
 $args = array(
     'post_type' => 'post',
-    'post_status' => 'publish', 
+    'post_status' => 'publish',
     'paged' => $paged,
-);
+        );
+
 $query = new WP_Query($args);
 if ($query->have_posts()) :
     while ($query->have_posts()) : $query->the_post();
@@ -37,10 +42,10 @@ if ($query->have_posts()) :
                     <a href="<?php the_permalink(); ?>">
             <?php
             echo sprintf(
-                __( 'Continue reading%s', 'simplecharm' ),
+                __('Continue reading%s', 'simplecharm'),
                 '<span class="screen-reader-text"> ' . get_the_title() . '</span>'
             );
-            ?>
+        ?>
         </a>
 
         </div>

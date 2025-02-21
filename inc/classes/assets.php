@@ -39,6 +39,7 @@ class Assets
          * Enqueue Styles
          */
         wp_enqueue_style('simplecharm-style');
+        wp_enqueue_style("dashicons");
         wp_enqueue_style('simplecharm-compiled-style');
         if (is_search()) {
             wp_enqueue_style('simplecharm-searchpage-style');

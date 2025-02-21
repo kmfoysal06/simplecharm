@@ -46,7 +46,7 @@ if(!defined('ABSPATH')) {
                     </h1>
                     <?php
                     }
-                ?>
+?>
                 </span>
                 <nav role="navigation" class="simplecharm-main-navigation">
                     <?php
@@ -71,4 +71,4 @@ if(has_nav_menu("simplecharm_header")) {
     </header>
     <br>
     <br>
-    <main role="main" id="simplecharm-content" tabindex="-1">
+<main role="main" id="simplecharm-content" tabindex="-1">

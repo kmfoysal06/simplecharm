@@ -26,3 +26,7 @@
 
 = 1.4.5 =
 * Fix: Category Loading Fixed and Search Box Design Improved
+
+= 1.4.7 =
+* Fix: Fixed Category Loading in Search Page
+* UI: Improved UI of Header of The Theme

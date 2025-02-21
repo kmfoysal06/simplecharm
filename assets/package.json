@@ -1,7 +1,7 @@
 {
-  "name": "simplecharm-portfolio-plugin",
+  "name": "simplecharm",
   "version": "1.0.0",
-  "description": "SimpleCharm Portfolio Plugin",
+  "description": "SimpleCharm WordPress Theme",
   "main": "main.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production --progress",
@@ -10,9 +10,8 @@
     "commit": "cz"
   },
   "keywords": [
-    "portfolio",
     "wordpress",
-    "plugin"
+    "theme"
   ],
   "author": "Kazi Mohammad Foysal",
   "license": "GNU",
