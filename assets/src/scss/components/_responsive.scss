@@ -1,11 +1,16 @@
 /* hide sidebar for mobile deveices */
 @media (max-width: 768px) {
-    .simplecharm-single-container div:nth-child(1), .simplecharm-post-container{
-        grid-column: 1 / 4;
-    }
-    .simplecharm-single-container, .simplecharm-posts-container{
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-        margin: 0;
-    }
+  .simplecharm-single-container div:nth-child(1),
+  .simplecharm-post-container {
+    grid-column: 1 / 4;
+  }
+  .simplecharm-single-container,
+  .simplecharm-posts-container {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    margin: 0;
+  }
+  .simplecharm-header-contents:has(+ .simplecharm-header-image) {
+    flex-direction: column;
+  }
 }

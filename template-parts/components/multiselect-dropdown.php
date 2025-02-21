@@ -9,7 +9,7 @@ $categories = $args['cats'];
 ?>
   <select name="categories" id="categories" class="simplecharm-multiselect-dropdown" multiple>
     <?php if(!empty($categories) && is_array($categories)):foreach($categories as $category):?>
-      <option id="<?php echo esc_attr($category['taxonomy'].''.$category['slug']); ?>" name="<?php echo esc_attr($category['id']); ?>"><?php echo $category['name']; ?></option>
+      <option id="<?php echo esc_attr($category->taxonomy.''.$category->slug); ?>" name="<?php echo esc_attr($category->term_id); ?>"><?php echo $category->name; ?></option>
     <?php endforeach;endif; ?>
   </select>
   <div class="simplecharm-select-form-container">
@@ -19,7 +19,7 @@ $categories = $args['cats'];
     <div class="simplecharm-select-options multiselect-closed multiselect-hide">
       <ul>
         <?php if(!empty($categories) && is_array($categories)):foreach($categories as $category):?>
-        <li class="<?php echo esc_attr($category['taxonomy'].''.$category['slug']); ?>"><?php echo $category['name']; ?> <div>
+        <li class="<?php echo esc_attr($category->taxonomy.''.$category->slug); ?>"><?php echo $category->name; ?> <div>
           <input type="checkbox" class="select-checkbox"><span></span>
         </div></li>
         <?php endforeach;endif; ?>

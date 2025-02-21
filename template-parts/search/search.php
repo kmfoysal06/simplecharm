@@ -15,7 +15,7 @@ $search = SIMPLECHARM_THEME\Inc\Classes\Search::get_instance();
 	</label>
 	<label class="simplecharm-multiselect-core-container">
 		<span class="screen-reader-text categories">Categories</span>
-		<?php get_template_part("template-parts/components/multiselect-dropdown",'',['cats' => $search->list_categories()]); ?>
+		<?php get_template_part("template-parts/components/multiselect-dropdown", '', ['cats' => $search->list_categories()]); ?>
 	</label>
 	<label class="submit-button-container">
 		<input type="submit" class="search-submit" value="Search">
