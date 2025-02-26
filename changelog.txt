@@ -30,3 +30,4 @@
 = 1.4.7 =
 * Fix: Fixed Category Loading in Search Page
 * UI: Improved UI of Header of The Theme
+* UI: Improved UI of Home Page Posts

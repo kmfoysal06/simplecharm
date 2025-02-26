@@ -1,45 +1,53 @@
 /* Utility Classes and Others */
 .simplecharm-text-center {
-    text-align: center;
+  text-align: center;
 }
+
 .simplecharm-model-link a,
-.simplecharm-model-link{
-    text-decoration: none;
+.simplecharm-model-link {
+  text-decoration: none;
 }
-.block{
-    display: block;
+
+.block {
+  display: block;
 }
-.simplecharm-model-shadow{
-	text-shadow: 2px 1px 2px #00f;
+
+.simplecharm-model-shadow {
+  text-shadow: 2px 1px 2px #00f;
 }
-.simplecharm-content{
-    border: 1px solid #333;
-    padding:10px;
+
+.simplecharm-content {
+  padding: 0.8rem 1.125rem;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
+
 .simplecharm-model-link a,
 .simplecharm-model-link,
 .simplecharm-content a,
 .simplecharm-main-navigation a,
 .simplecharm-edit-profile-btn a,
 .simplecharm-model-link p {
-    color: #005e86;
+  color: #005e86;
 }
-.simplecharm-content p{
-    margin: 10px 0;
-    color: #070002;
+
+.simplecharm-content p {
+  margin: 10px 0;
+  color: #070002;
 }
+
 .simplecharm-content a:visited,
 .simplecharm-main-navigation a:visited,
 .simplecharm-edit-profile-btn a:visited {
-    color: #005881;
+  color: #005881;
 }
-
 
 .simplecharm-content a,
 .simplecharm-main-navigation a,
 .simplecharm-edit-profile-btn a {
-    color: #005e8b;
-    text-decoration: none;
+  color: #005e8b;
+  text-decoration: none;
 }
 
 .simplecharm-content a:hover,
@@ -47,10 +55,9 @@
 .simplecharm-main-navigation a:hover,
 .simplecharm-main-navigation a:focus,
 .simplecharm-edit-profile-btn a:hover,
-.simplecharm-edit-profile-btn a:focus{
-    text-decoration: underline;
+.simplecharm-edit-profile-btn a:focus {
+  text-decoration: underline;
 }
-
 
 .simplecharm-content a:focus,
 .simplecharm-main-navigation a:focus,
@@ -58,15 +65,17 @@
 .simplecharm-content a:hover,
 .simplecharm-main-navigation a:hover,
 .simplecharm-edit-profile-btn a:hover {
-    color: #005e86;
+  color: #005e86;
 }
 
-.simplecharm-flex{
-    display: flex;
+.simplecharm-flex {
+  display: flex;
 }
-.simplecharm-m-auto{
-    margin: auto;
+
+.simplecharm-m-auto {
+  margin: auto;
 }
-.simplecharm-justify-center{
-    justify-content: center;
+
+.simplecharm-justify-center {
+  justify-content: center;
 }

@@ -1,26 +1,53 @@
 /*styling single.php page and home page*/
-.simplecharm-home-post-title a{
-    text-decoration: none;
+.simplecharm-home-post-title a {
+  text-decoration: none;
 }
-.simplecharm-post-category a{
-	color:#005882;
+
+.simplecharm-post-category a {
+  color: #005882;
 }
-.simplecharm-post-category{
-    display: block;
-    text-align: left;
-    text-transform: uppercase;
-    font-weight: bold;
+
+.simplecharm-post-category a,
+.simplecharm-post-category a:visited {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.75rem 0.8rem;
+  background: #000;
+  width: fit-content;
+  margin-left: auto;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  border-bottom-right-radius: 0;
+}
+
+.simplecharm-single-container,
+.simplecharm-posts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin: 10px;
+}
+
+.post-meta  {
+  font-style: italic;
+  display:flex;
+  column-gap:0.2rem;
+}
+
+.post-author {
+  text-decoration: underline;
+}
+.simplecharm-home-post-title a,
+.simplecharm-home-post-title a:visited{
+    font-size: 1.5rem;
     color: #000;
 }
-.simplecharm-single-container, .simplecharm-posts-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-    margin: 10px;
+.simplecharm-content.post {
+text-align: left;
 }
-.post-author{
-	text-decoration:underline;
-}
-.simplecharm-single-container div:nth-child(1), .simplecharm-post-container{
-    grid-column: 1 / 3;
+.simplecharm-single-container div:nth-child(1),
+.simplecharm-post-container {
+  grid-column: 1 / 3;
 }
