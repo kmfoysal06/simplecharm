@@ -141,6 +141,14 @@ form.search-form {
 }
 
 /*Other Styles*/
+#simplecharm-search-page {
+  width: min(1280px, 98%);
+  margin-inline: auto;
+}
+#simplecharm-search-page .not-found-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 #simplecharm-loading-overlay {
   position: fixed;
   top: 0;
@@ -155,8 +163,8 @@ form.search-form {
 }
 
 #simplecharm-loading-overlay .loader {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   border: 5px solid #000;
   border-top-color: #fff;
   border-radius: 50%;

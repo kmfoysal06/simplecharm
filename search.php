@@ -30,7 +30,7 @@ if (have_posts()) :
     the_posts_navigation();
 else:
     ?>
-<p class="simplecharm-text-center">
+<p class="simplecharm-text-center not-found-text">
     <?php echo esc_html( sprintf( __( 'No search results found for "%s"', 'simplecharm' ), get_search_query() ) ); ?>
 </p>
 

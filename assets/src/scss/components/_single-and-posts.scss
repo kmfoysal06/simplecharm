@@ -39,13 +39,24 @@
 .post-author {
   text-decoration: underline;
 }
-.simplecharm-home-post-title a,
-.simplecharm-home-post-title a:visited{
+.post-title a,
+.post-title a:visited{
     font-size: 1.5rem;
-    color: #000;
+    color: #000; 
+    &:hover {
+      color: #000;
+    }
 }
 .simplecharm-content.post {
 text-align: left;
+}
+.simplecharm-post .post-title {
+  text-align:left;
+  line-height:3.5rem;
+}
+.simplecharm-post .post-meta {
+    font-weight: 600;
+    line-height: 2rem;
 }
 .simplecharm-single-container div:nth-child(1),
 .simplecharm-post-container {
