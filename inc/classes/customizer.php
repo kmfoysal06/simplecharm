@@ -32,7 +32,7 @@ class Customizer{
             'type'              => 'theme_mod',
             'sanitize_callback' => 'sanitize_text_field',
             'transport'         => 'refresh',
-	    'default' 		=> __("Proudly Powered by %%LINK%%", "simplecharm")
+	    'default' 		=> __("Proudly Powered by %LINK%", "simplecharm")
         ));
     
 	$wp_customize->add_setting("simplecharm_footer_link_text", [
