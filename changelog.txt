@@ -34,4 +34,6 @@
 
 = 1.4.9 =
 * UI: Improved UI of Header, Search Page and Single Post
+* UI: Improved UI of Header Navigation Menu
 * Feat: Footer Custmization With Site Customizer
+* Feat: Distraction Free Image Zooming For Single Post

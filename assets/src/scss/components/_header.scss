@@ -3,9 +3,11 @@
   width: 100%;
   height: auto;
 }
+
 .simplecharm-header {
   position: relative;
 }
+
 .simplecharm-header-contents:has(+ .simplecharm-header-image) {
   position: absolute;
   top: 50%;
@@ -17,9 +19,29 @@
   max-width: 1280px;
   row-gap: 0.5rem;
 }
+
 .simplecharm-header-contents a {
   color: #fff;
   background-color: #000;
   padding: 0.5rem 1rem;
   border-radius: 0.125rem;
+}
+
+.simplecharm-main-navigation li a {
+  background-color: transparent;
+  color: #005e8b;
+}
+
+.simplecharm-main-navigation .sub-menu li a {
+  background: #fff;
+}
+
+.simplecharm-main-navigation>div {
+  margin-bottom: 1rem;
+}
+
+span:has(> form.search-form) {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
 }

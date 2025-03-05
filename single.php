@@ -47,7 +47,12 @@ if (have_posts()) : ?>
         <br>
         <div class="comment-respond wp-block-post-comments-form">
             <?php
-        comments_template();?>
+			comments_template();?>
+	<div id="simplecharm-zoom-overlay">
+		<button id="close-btn">&times;</button>
+		<img id="zoomed-image" src="" alt="Zoomed Image">
+			</div>
+
         </div>
         <?php
         endwhile; 

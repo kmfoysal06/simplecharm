@@ -1,7 +1,60 @@
 /* Style for posts*/
-pre{
-	overflow-y:scroll;
+pre {
+  overflow-y: scroll;
 }
-code{
-    font-family: ui-sans-serif ui-serif sans-serif serif monospace;
+
+code {
+  font-family: ui-sans-serif ui-serif sans-serif serif monospace;
+}
+
+/* Image zooming for single posts */
+.simplecharm-single-container img {
+  cursor: zoom-in;
+}
+#simplecharm-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#simplecharm-zoom-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+#simplecharm-zoom-overlay #zoomed-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transform: scale(0.7);
+  opacity: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.3s ease;
+}
+
+#simplecharm-zoom-overlay.active #zoomed-image {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+#simplecharm-zoom-overlay #close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
 }

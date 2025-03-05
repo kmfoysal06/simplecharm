@@ -50,7 +50,8 @@ class Assets
         /**
          * Register Search Functionality Script
          */
-        wp_register_script('simplecharm-search-functionalities', SIMPLECHARM_DIR_URI . '/assets/build/js/search.js', array('jquery'), filemtime(SIMPLECHARM_DIR_PATH . '/assets/build/js/search.js'), true);
+		wp_register_script('simplecharm-search-functionalities', SIMPLECHARM_DIR_URI . '/assets/build/js/search.js', array('jquery'), filemtime(SIMPLECHARM_DIR_PATH . '/assets/build/js/search.js'), true);
+		wp_register_script("simplecharm-single-post", SIMPLECHARM_DIR_URI . '/assets/build/js/post.js', [], filemtime(SIMPLECHARM_DIR_PATH . '/assets/build/js/post.js'), true);
 
         /**
          * Enqueue Scripts
@@ -60,7 +61,10 @@ class Assets
             wp_localize_script('simplecharm-search-functionalities', 'admin_data', array(
                 'ajax_url' => admin_url('admin-ajax.php'),
             ));
-        }
+		}
+		if(is_single()) {
+			wp_enqueue_script("simplecharm-single-post");
+		}
 
 
     }

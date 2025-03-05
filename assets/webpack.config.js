@@ -1,68 +1,68 @@
-
 /**
  * Webpack configuration.
  */
-const path                    = require('path')
-const MiniCssExtractPlugin    = require('mini-css-extract-plugin')
-const CopyPlugin              = require('copy-webpack-plugin')
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 // JS Directory path.
-const JS_DIR    = path.resolve(__dirname, 'src/js')
-const IMG_DIR   = path.resolve(__dirname, 'src/images')
-const BUILD_DIR = path.resolve(__dirname, 'build')
+const JS_DIR = path.resolve(__dirname, "src/js");
+const IMG_DIR = path.resolve(__dirname, "src/images");
+const BUILD_DIR = path.resolve(__dirname, "build");
 
 const entry = {
-  main: JS_DIR + '/main.js',
-  search: JS_DIR + '/search.js',
-  customizer: JS_DIR + '/customizer.js',
-}
+	main: JS_DIR + "/main.js",
+	search: JS_DIR + "/search.js",
+	customizer: JS_DIR + "/customizer.js",
+	post: JS_DIR + "/post.js",
+};
 const output = {
-  path: BUILD_DIR,
-  filename: 'js/[name].js'
-}
+	path: BUILD_DIR,
+	filename: "js/[name].js",
+};
 
 const plugins = (argv) => [
-  new MiniCssExtractPlugin({
-    filename: 'css/[name].css'
-  }),
-  new CopyPlugin({
-    patterns: [
-      {
-        from: path.join(IMG_DIR, '/'),
-        to: path.join(BUILD_DIR, 'img')
-      },
-    ]
-  })
-]
+	new MiniCssExtractPlugin({
+		filename: "css/[name].css",
+	}),
+	new CopyPlugin({
+		patterns: [
+			{
+				from: path.join(IMG_DIR, "/"),
+				to: path.join(BUILD_DIR, "img"),
+			},
+		],
+	}),
+];
 
 const rules = [
-  {
-    test: /\.js$/,
-    include: [JS_DIR],
-    exclude: /node_modules/,
-    use: 'babel-loader'
-  },
-  {
-    test: /\.scss$/,
-    exclude: /node_modules/,
-    use: [
-      MiniCssExtractPlugin.loader,
-      'css-loader',
-      'postcss-loader',
-      'sass-loader',
-    ]
-  },
-  {
-    test: /\.(png|jpg|jpeg|gif|ico)$/,
-    use: {
-      loader: 'file-loader',
-      options: {
-        name: '[path][name].[ext]',
-        publicPath: 'production' === process.env.NODE_ENV ? '../' : '../../'
-      }
-    }
-  },
-]
+	{
+		test: /\.js$/,
+		include: [JS_DIR],
+		exclude: /node_modules/,
+		use: "babel-loader",
+	},
+	{
+		test: /\.scss$/,
+		exclude: /node_modules/,
+		use: [
+			MiniCssExtractPlugin.loader,
+			"css-loader",
+			"postcss-loader",
+			"sass-loader",
+		],
+	},
+	{
+		test: /\.(png|jpg|jpeg|gif|ico)$/,
+		use: {
+			loader: "file-loader",
+			options: {
+				name: "[path][name].[ext]",
+				publicPath: "production" === process.env.NODE_ENV ? "../" : "../../",
+			},
+		},
+	},
+];
 
 /**
  * Since you may have to disambiguate in your webpack.config.js between development and production builds,
@@ -75,26 +75,24 @@ const rules = [
  * @see https://webpack.js.org/configuration/configuration-types/#exporting-a-function
  */
 module.exports = (env, argv) => ({
+	entry: entry,
 
-  entry: entry,
+	output: output,
 
-  output: output,
+	/**
+	 * A full SourceMap is emitted as a separate file ( e.g.  main.js.map )
+	 * It adds a reference comment to the bundle so development tools know where to find it.
+	 * set this to false if you don't need it
+	 */
+	devtool: "source-map",
 
-  /**
-   * A full SourceMap is emitted as a separate file ( e.g.  main.js.map )
-   * It adds a reference comment to the bundle so development tools know where to find it.
-   * set this to false if you don't need it
-   */
-  devtool: 'source-map',
+	module: {
+		rules: rules,
+	},
 
-  module: {
-    rules: rules
-  },
+	plugins: plugins(argv),
 
-
-  plugins: plugins(argv),
-
-  externals: {
-    jquery: 'jQuery'
-  }
-})
+	externals: {
+		jquery: "jQuery",
+	},
+});

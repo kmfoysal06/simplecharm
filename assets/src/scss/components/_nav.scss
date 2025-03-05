@@ -10,7 +10,7 @@
 nav.simplecharm-main-navigation ul {
     list-style: none;
     position: relative;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.9);
     margin:0 0 5px 0;
     transition:all 0.4s;
     transition-delay:0.2s;
@@ -47,4 +47,5 @@ nav.simplecharm-main-navigation ul li:focus-within .sub-menu {
 nav.simplecharm-main-navigation ul li a:hover,
 nav.simplecharm-main-navigation ul li a:focus{
     text-decoration: underline;
+  background-color: transparent;
 }
