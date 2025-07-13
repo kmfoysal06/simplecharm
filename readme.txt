@@ -1,9 +1,9 @@
 === SimpleCharm ===
 Contributors: kmfoysal06
 Requires at least: 5.5
-Tested up to: 6.6
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.4.9
+Stable tag: 1.4.10
 Text Domain: simplecharm
 Author URI: http://profiles.wordpress.org/kmfoysal06
 License: GPLv2 or later

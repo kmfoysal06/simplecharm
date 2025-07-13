@@ -37,3 +37,6 @@
 * UI: Improved UI of Header Navigation Menu
 * Feat: Footer Custmization With Site Customizer
 * Feat: Distraction Free Image Zooming For Single Post
+
+= 1.4.10 =
+* Fix: Fixed Category and Tags Archive Page

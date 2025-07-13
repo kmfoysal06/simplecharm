@@ -13,21 +13,18 @@ get_header();
 <?php if(is_category()): ?>
 <h2> <?php echo esc_html( sprintf( __( 'Category: %s', 'simplecharm' ), single_cat_title('', false) ) ); ?>
 </h2>
+<?php elseif(is_tag()): ?>
+    <h2> <?php echo esc_html( sprintf( __( 'Tag: %s', 'simplecharm' ), single_tag_title('', false) ) ); ?>
+    </h2>
+    <?php elseif(is_date()): ?>
+    <h2> <?php echo esc_html( sprintf( __( 'Date: %s', 'simplecharm' ), get_the_date() ) ); ?>
+    </h2>
 <?php endif; ?>
     <div class="simplecharm-post-container">
-        <?php
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-// Load posts on the home page
-$args = array(
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'paged' => $paged,
-        );
-
-$query = new WP_Query($args);
-if ($query->have_posts()) :
-    while ($query->have_posts()) : $query->the_post();
-        ?>
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+    ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class("simplecharm-text-center simplecharm-content"); ?>>
 			<p class="simplecharm-post-category"><?php echo wp_kses_post(get_the_category_list(', ')); ?></p>
 			<h3 class="simplecharm-home-post-title"><a
