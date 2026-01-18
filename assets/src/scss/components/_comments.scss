@@ -1,4 +1,13 @@
 /*styling comment box */
+.simplecharm-single-container .comment-list {
+  list-style: none;
+}
+.simplecharm-single-container .reply {
+	display: block;
+	margin-top: 12px;
+	margin-left: auto;
+	width: fit-content;
+}
 .comment-body {
     border: 1px solid #090909;
     padding: 10px;
@@ -30,9 +39,79 @@
     color:#fff;
     font-weight:bold;
 }
-.reply a {
+.simplecharm-single-container .reply a {
     text-decoration: none;
     color: currentColor;
-    padding: 5px;
+    padding: 6px 10px;
     border: 1px solid #000;
 }
+
+
+.simplecharm-single-container {
+  .comments-title {
+    margin-bottom: 18px;
+  }
+  .comment-respond {
+    margin-top: 12px;
+    border: 1px solid;
+    padding: 12px;
+    textarea {
+      padding: 12px;
+    }
+  }
+  
+  .comment-form-comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    margin-top: 13px;
+  }
+  
+  .logged-in-as {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+  }
+  
+  .wp-block-post-comments-form input[type="submit"] {
+    border: none;
+    margin-left: auto;
+    display: block;
+    cursor: pointer;
+  }
+
+}
+
+
+.simplecharm-single-container .comment-author.vcard {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.simplecharm-single-container .comment-author.vcard a {
+  color: #000;
+  text-decoration: none;
+}
+.simplecharm-single-container .comment-author.vcard a:hover {
+  text-decoration: underline;
+}
+.simplecharm-single-container .comment-metadata {
+  width: fit-content;
+  padding: 3px 8px;
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+  gap: 6px;
+  align-items: center;
+}
+.simplecharm-single-container .comment-metadata a {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+}
+.simplecharm-single-container .comment-metadata a:hover {
+  text-decoration: underline;
+}
+
+
+
