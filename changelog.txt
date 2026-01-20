@@ -44,3 +44,6 @@
 = 1.4.11 =
 * UI: Improved UI of Header, Search Page and Single Post
 * UI: Removed Search Button From Search Page
+= 1.4.12 =
+* UI: Improved UI of commentbox of single
+* BUG: issue with autoloader fixed
