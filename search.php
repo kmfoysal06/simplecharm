@@ -20,6 +20,7 @@ if (have_posts()) :
             href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h1>
     <div class="post-meta">
         <span class="post-date"><?php echo esc_html(get_the_date()); ?></span>
+			-
         <span class="post-author"><a
                 href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php echo esc_html(get_the_author()); ?></a></span>
     </div>

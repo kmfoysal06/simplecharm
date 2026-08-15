@@ -40,3 +40,7 @@
 
 = 1.4.10 =
 * Fix: Fixed Category and Tags Archive Page
+
+= 1.4.11 =
+* UI: Improved UI of Header, Search Page and Single Post
+* UI: Removed Search Button From Search Page

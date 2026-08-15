@@ -1,6 +1,11 @@
 /*styling single.php page and home page*/
+.simplecharm-home-post-title {
+  max-width: calc(100% - 200px);
+  font-size: 24px;
+}
 .simplecharm-home-post-title a {
   text-decoration: none;
+  color: #000!important;
 }
 
 .simplecharm-post-category a {
@@ -8,20 +13,39 @@
 }
 
 .simplecharm-post-category a,
+.simplecharm-post-category a:hover,
+.simplecharm-post-category a:focus,
 .simplecharm-post-category a:visited {
   display: block;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
-  padding: 0.75rem 0.8rem;
+  padding: 6px 8px;
   background: #000;
   width: fit-content;
   margin-left: auto;
   font-size: 0.8rem;
   border-radius: 0.5rem;
   border-bottom-right-radius: 0;
+  line-height: normal;
+  text-underline-offset: 3px;
 }
 
+.simplecharm-post-category-badge {
+  margin: 0!important;
+}
+.simplecharm-post-category-badge a {
+  position: absolute;
+  top: 12.8px;
+  right: 18px;
+  width: fit-content;
+  max-width: 200px;
+}
+.simplecharm-home-excerpt {
+  margin-top: 6px!important;
+  margin-bottom: 0!important;
+  line-height: normal;
+}
 .simplecharm-single-container,
 .simplecharm-posts-container {
   display: grid;
@@ -29,7 +53,18 @@
   grid-gap: 10px;
   margin: 10px;
 }
-
+.simplecharm-readmore-link {
+  font-size: 14px;
+  text-underline-offset: 3px;
+}
+.simplecharm-content .post-meta {
+  font-size: 14px;
+  font-style: normal;
+}
+.simplecharm-content .post-meta a {
+  color: #000;
+  text-underline-offset: 3px;
+}
 .post-meta  {
   font-style: italic;
   display:flex;
@@ -37,7 +72,7 @@
 }
 
 .post-author {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .post-title a,
 .post-title a:visited{
@@ -47,8 +82,10 @@
       color: #000;
     }
 }
-.simplecharm-content.post {
+.simplecharm-content.post,
+.simplecharm-content.page {
 text-align: left;
+position: relative;
 }
 .simplecharm-post .post-title {
   text-align:left;

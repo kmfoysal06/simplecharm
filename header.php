@@ -31,7 +31,7 @@ if(!defined('ABSPATH')) {
     <header class="simplecharm-text-center" role="banner">
         <div class="simplecharm-header">
             <div class="simplecharm-header-contents">
-                <span>
+                <span class="simplecharm-site-branding">
                     <?php
             if(has_custom_logo()) {
                 the_custom_logo();

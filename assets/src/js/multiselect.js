@@ -17,6 +17,7 @@
           e.preventDefault();
           let checked = $(this).find('input')[0];
             checked.checked = !checked.checked;
+	
 
             if (checked.checked) {
               $(checked).addClass("selected");
@@ -25,7 +26,8 @@
             }
           
           const option = $(`#${this.className}`);
-            option.prop('selected', checked.checked);
+          option.prop('selected', checked.checked);
+	  option.trigger('change');
 
 
          $(`#${this.className}`).selected = checked.checked;
@@ -33,7 +35,7 @@
           const selectedCount = $(".selected");
 
           if(selectedCount.length){
-            selectedStatus.text(`${selectedCount.length} Category Selected`);
+            selectedStatus.text(`${selectedCount.length} Category`);
           }else{
             selectedStatus.text(`Select Categories`);  
           }

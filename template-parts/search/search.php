@@ -9,13 +9,10 @@ $search = SIMPLECHARM_THEME\Inc\Classes\Search::get_instance();
 
 ?>
 <form role="search" method="post" class="search-form" id="simplecharm-advanced-search-form">
-	<div class="serch-box-container">
+	<div class="search-box-container">
 		<label class="search-field-container">
 		<span class="screen-reader-text">Search for:</span>
 		<input type="search" class="search-field" placeholder="Search …" name="s" value="<?php echo isset($_GET['s']) ? esc_attr($_GET['s']) : '' ?>">
-	</label>
-	<label class="submit-button-container">
-		<button type="submit" class="search-submit"><span class="dashicons dashicons-search"></span></button>
 	</label>
 	</div>	
 

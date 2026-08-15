@@ -24,6 +24,7 @@ form.search-form {
   display: flex;
   background: #fff;
   color: #000;
+  margin-left: auto;
 }
 
 .simplecharm-select-form-inner {
@@ -31,12 +32,14 @@ form.search-form {
 }
 
 .simplecharm-select-form {
-  width: 200px;
+  width: 190px;
   cursor: pointer;
   overflow: hidden;
+  font-size: 14px;
 }
 
 .simplecharm-select-form p {
+  font-weight: 300;
   text-align: center;
   position: relative;
   z-index: 3;

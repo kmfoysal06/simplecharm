@@ -15,7 +15,7 @@ $categories = $args['cats'];
   <div class="simplecharm-select-form-container">
     <div class="simplecharm-select-form-inner">
       <div class="simplecharm-select-form">
-    <p><b>Select Categories</b> <span class="simplecharm-selectform-dropdown-icon">&#x2B9F;</span></p>
+    <p><b>Categories</b> <span class="simplecharm-selectform-dropdown-icon">&#x2B9F;</span></p>
     <div class="simplecharm-select-options multiselect-closed multiselect-hide">
       <ul>
         <?php if(!empty($categories) && is_array($categories)):foreach($categories as $category):?>

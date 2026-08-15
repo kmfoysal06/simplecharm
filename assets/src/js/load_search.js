@@ -25,19 +25,35 @@
 
         load_posts(){
             $('#simplecharm-advanced-search-form').on('submit', (e) => {
-            e.preventDefault();
-            let selectOptions = $(".simplecharm-select-options");
-            let selectDropdownIcon = $(".simplecharm-selectform-dropdown-icon");
-            let search_term = $('.search-field').val();
-            let categories = this.load_categories();
-
-            if(!selectOptions.hasClass("multiselect-closed")){
-                selectOptions.addClass("multiselect-closed");
-                selectDropdownIcon.removeClass("multiselect-open");
-                selectOptions.addClass("multiselect-hide");
-            }
-            this.requestPosts(e,search_term,categories,this.page);
-        });
+	            e.preventDefault();
+	            let selectOptions = $(".simplecharm-select-options");
+	            let selectDropdownIcon = $(".simplecharm-selectform-dropdown-icon");
+	            let search_term = $('.search-field').val();
+	            let categories = this.load_categories();
+	
+	            if(!selectOptions.hasClass("multiselect-closed")){
+	                selectOptions.addClass("multiselect-closed");
+	                selectDropdownIcon.removeClass("multiselect-open");
+	                selectOptions.addClass("multiselect-hide");
+	            }
+	            this.requestPosts(e,search_term,categories,this.page);
+	   });
+	if($('#simplecharm-advanced-search-form').length){ 
+		$('.simplecharm-multiselect-dropdown').on('change', (e) => {
+		            e.preventDefault();
+		            let selectOptions = $(".simplecharm-select-options");
+		            let selectDropdownIcon = $(".simplecharm-selectform-dropdown-icon");
+		            let search_term = $('.search-field').val();
+		            let categories = this.load_categories();
+		
+		            if(!selectOptions.hasClass("multiselect-closed")){
+		                selectOptions.addClass("multiselect-closed");
+		                selectDropdownIcon.removeClass("multiselect-open");
+		                selectOptions.addClass("multiselect-hide");
+		            }
+		            this.requestPosts(e,search_term,categories,this.page);
+		   });
+		}
         }
         async requestPosts(e,search_term,categories,page) {
             let apiUrl;

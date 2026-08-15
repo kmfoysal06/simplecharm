@@ -32,6 +32,10 @@
   color: #005e8b;
 }
 
+.simplecharm-site-branding {
+  align-self: center;
+}
+
 .simplecharm-main-navigation .sub-menu li a {
   background: #fff;
 }
@@ -42,6 +46,6 @@
 
 span:has(> form.search-form) {
   display: block;
-  width: fit-content;
+  width: 100%;
   margin-left: auto;
 }
